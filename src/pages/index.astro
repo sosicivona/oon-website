@@ -2,11 +2,201 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
-  <section class="placeholder" aria-labelledby="page-title">
-    <p class="eyebrow">Phase 1</p>
-    <h1 id="page-title">Oyagaa-Oomo Network Website</h1>
-    <p>Static site scaffold in progress.</p>
-    <p>This page is a placeholder. Content, design, and source materials will be added in later phases.</p>
+<BaseLayout
+  title="Oyagaa-Oomo Network | Evidence-first dossier entry"
+  description="An evidence-first prototype homepage for the Oyagaa-Oomo Network website."
+>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Oyagaa-Oomo Network home">
+      <span class="brand-mark">OON</span>
+      <span>Oyagaa-Oomo Network</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#read">Read</a>
+      <a href="#watch">Watch</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#archives">Archives</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section id="top" class="hero section-shell" aria-labelledby="page-title">
+    <div class="hero-copy">
+      <p class="eyebrow">Evidence-first orientation</p>
+      <h1 id="page-title">The UMMO dossier is not a single story. It is a documented corpus.</h1>
+      <p class="hero-subtitle">
+        Letters, scans, translations, technical claims, anomalies, and decades of analysis —
+        organized here so visitors can examine the case without being asked to believe it.
+      </p>
+      <div class="cta-row" aria-label="Homepage actions">
+        <a class="button button-primary" href="#evidence">See the evidence</a>
+        <a class="button button-secondary" href="#read">Read one letter</a>
+        <a class="button button-ghost" href="#archives">Verify the archives</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Source handling note">
+      <p class="panel-label">Source status</p>
+      <p>
+        This prototype uses placeholders until references, translations, archive links,
+        and source status labels are verified.
+      </p>
+    </aside>
   </section>
+
+  <section class="section-shell" aria-labelledby="returning-title">
+    <div class="section-heading">
+      <p class="eyebrow">Why researchers keep returning to it</p>
+      <h2 id="returning-title">Substance first, conclusions later.</h2>
+      <p>
+        The dossier is worth organizing because it contains multiple layers that can be
+        examined, compared, and challenged without treating any hypothesis as settled.
+      </p>
+    </div>
+    <div class="compact-grid">
+      <article class="info-card">
+        <h3>Documented corpus</h3>
+        <p>A body of texts and references that should be approached through source status, context, and verification.</p>
+      </article>
+      <article class="info-card">
+        <h3>Long timeline</h3>
+        <p>A multi-decade research trail that requires careful chronology rather than compressed storytelling.</p>
+      </article>
+      <article class="info-card">
+        <h3>Technical claims</h3>
+        <p>Claims that should be separated from interpretation and reviewed with clear confidence labels.</p>
+      </article>
+      <article class="info-card">
+        <h3>Anomalies to examine</h3>
+        <p>Patterns and tensions that may deserve attention while remaining open to ordinary explanations.</p>
+      </article>
+      <article class="info-card">
+        <h3>Competing explanations</h3>
+        <p>Multiple readings can be held in view: archival, historical, social, literary, technical, and skeptical.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="read" class="section-shell split-section" aria-labelledby="letter-title">
+    <div class="section-heading">
+      <p class="eyebrow">A first doorway into the letters</p>
+      <h2 id="letter-title">Start with one text, then widen the frame.</h2>
+      <p>
+        This area will later introduce a verified letter pathway with references, language
+        status, and archive context.
+      </p>
+    </div>
+    <article class="featured-card">
+      <dl class="source-list">
+        <div>
+          <dt>Reference</dt>
+          <dd>TODO</dd>
+        </div>
+        <div>
+          <dt>Theme</dt>
+          <dd>TODO</dd>
+        </div>
+        <div>
+          <dt>Why this text matters</dt>
+          <dd>TODO</dd>
+        </div>
+        <div>
+          <dt>Source status</dt>
+          <dd>TODO</dd>
+        </div>
+        <div>
+          <dt>Available languages</dt>
+          <dd>TODO</dd>
+        </div>
+      </dl>
+      <div class="card-actions">
+        <a class="button button-primary" href="#read">Read this text</a>
+        <a class="text-link" href="#archives">View archive source</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section-shell" aria-labelledby="entry-title">
+    <div class="section-heading">
+      <p class="eyebrow">Choose your entry</p>
+      <h2 id="entry-title">Different routes, same source-first standard.</h2>
+    </div>
+    <div class="path-grid">
+      <a class="path-card" href="#read">
+        <span>Read</span>
+        <p>Enter through one essential text.</p>
+      </a>
+      <a id="watch" class="path-card" href="#watch">
+        <span>Watch</span>
+        <p>Start with OON video explanations.</p>
+      </a>
+      <a class="path-card" href="#evidence">
+        <span>Evidence</span>
+        <p>Examine why the case deserves attention.</p>
+      </a>
+      <a class="path-card" href="#archives">
+        <span>Archives</span>
+        <p>Verify sources and references.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="evidence" class="section-shell" aria-labelledby="evidence-title">
+    <div class="section-heading">
+      <p class="eyebrow">Evidence &amp; Questions preview</p>
+      <h2 id="evidence-title">A preview of what should be tested, not assumed.</h2>
+    </div>
+    <div class="three-grid">
+      <article class="info-card">
+        <h3>Documented facts</h3>
+        <p>TODO: Add verified facts only after source review.</p>
+      </article>
+      <article class="info-card">
+        <h3>Claims to examine</h3>
+        <p>TODO: Add claims with labels for source, translation, analysis, and hypothesis.</p>
+      </article>
+      <article class="info-card">
+        <h3>Competing explanations</h3>
+        <p>TODO: Add explanatory frames without presenting a single conclusion as final.</p>
+      </article>
+    </div>
+    <a class="button button-secondary section-cta" href="#evidence">Explore Evidence &amp; Questions</a>
+  </section>
+
+  <section class="section-shell method-section" aria-labelledby="method-title">
+    <div class="section-heading">
+      <p class="eyebrow">Method</p>
+      <h2 id="method-title">A critical path through unusual material.</h2>
+    </div>
+    <ul class="method-list">
+      <li>No belief required</li>
+      <li>Source first</li>
+      <li>Translation status visible</li>
+      <li>Analysis labeled as analysis</li>
+      <li>Archives remain linked</li>
+    </ul>
+  </section>
+
+  <section id="archives" class="section-shell" aria-labelledby="ecosystem-title">
+    <div class="section-heading">
+      <p class="eyebrow">Source ecosystem</p>
+      <h2 id="ecosystem-title">Future links should point outward with context.</h2>
+      <p>
+        These sources and channels need verified URLs and status notes before they become
+        live references.
+      </p>
+    </div>
+    <div class="ecosystem-grid">
+      <article class="source-card"><h3>UMMO-Ciencias</h3><p>TODO: Add verified source link.</p></article>
+      <article class="source-card"><h3>Ummo-Sciences FR</h3><p>TODO: Add verified source link.</p></article>
+      <article class="source-card"><h3>Ummo-Sciences EN</h3><p>TODO: Add verified source link.</p></article>
+      <article class="source-card"><h3>UmmoWiki</h3><p>TODO: Add verified source link.</p></article>
+      <article class="source-card"><h3>OON X / Twitter</h3><p>TODO: Add verified source link.</p></article>
+      <article class="source-card"><h3>OON YouTube</h3><p>TODO: Add verified source link.</p></article>
+    </div>
+  </section>
+
+  <footer id="about" class="site-footer">
+    <p>Oyagaa-Oomo Network</p>
+    <p>Homepage prototype. Content, design refinement, and verified source materials will be added in later phases.</p>
+  </footer>
 </BaseLayout>
