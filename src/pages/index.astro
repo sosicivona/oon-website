@@ -35,18 +35,59 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
       aria-hidden="true"
     ></div>
     <div class="section-shell hero-shell">
-      <div class="hero-inner glass-panel">
-        <p class="eyebrow">Source-first research network</p>
-        <h1 id="page-title">UMMO is not a sighting case. It is a decades-long correspondence dossier.</h1>
-        <p class="hero-subtitle">
-          Letters, later communications, technical claims, archives, anomalies, and
-          competing explanations — organized for examination, not belief.
-        </p>
-        <div class="cta-row" aria-label="Homepage actions">
-          <a class="button button-primary" href="#case">Understand the case</a>
-          <a class="button button-secondary" href="#case">Examine the evidence</a>
-          <a class="button button-ghost" href="#read">Enter the corpus</a>
+      <div class="hero-grid">
+        <div class="hero-copy glass-panel">
+          <p class="eyebrow">OOMO / UMMO · Documentary dossier</p>
+          <h1 id="page-title">The UMMO dossier</h1>
+          <p class="hero-differentiator">A correspondence case, not a sighting case.</p>
+          <p class="hero-subtitle">
+            Letters, later communications, technical claims, archives, anomalies, and
+            competing explanations — organized for reading, comparison, and source review.
+          </p>
+          <div class="cta-row" aria-label="Homepage actions">
+            <a class="button button-primary" href="#case">Understand the case</a>
+            <a class="button button-secondary" href="#case">Examine the evidence</a>
+            <a class="button button-ghost" href="#read">Enter the corpus</a>
+          </div>
         </div>
+
+        <aside class="corpus-index glass-panel" aria-label="Corpus index preview">
+          <div class="document-stack" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="index-kicker">Corpus Index</p>
+          <div class="index-section">
+            <h2>Document types</h2>
+            <ul>
+              <li><span>Historical correspondence</span><small>primary material</small></li>
+              <li><span>Technical annexes</span><small>attached to letters</small></li>
+              <li><span>Later communications</span><small>public-era material</small></li>
+              <li><span>Recipient correspondence</span><small>context and responses</small></li>
+            </ul>
+          </div>
+          <div class="index-section">
+            <h2>Topic pathways</h2>
+            <ul class="topic-list">
+              <li>Who they say they are</li>
+              <li>Culture and society</li>
+              <li>Earth and humanity</li>
+              <li>Other civilizations</li>
+              <li>Science and technology</li>
+              <li>Philosophy and social organization</li>
+            </ul>
+          </div>
+          <div class="index-section">
+            <h2>Archive sources</h2>
+            <ul>
+              <li><span>UMMO-Ciencias</span><small>primary archive</small></li>
+              <li><span>Ummo-Sciences FR</span><small>French resource</small></li>
+              <li><span>Ummo-Sciences EN</span><small>English access</small></li>
+              <li><span>UmmoWiki</span><small>cross-reference index</small></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -54,37 +95,79 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
   <section id="case" class="section-shell case-section" aria-labelledby="case-title">
     <div class="section-heading">
       <p class="eyebrow">The case</p>
-      <h2 id="case-title">What makes UMMO different?</h2>
-      <p class="section-lede">Most UFO cases begin with an event. UMMO begins with documents.</p>
+      <h2 id="case-title">Most UFO cases begin with an event. UMMO begins with documents.</h2>
+      <p class="section-lede">
+        The dossier is explored through correspondence, later communications, topic
+        pathways, archive sources, and competing explanations.
+      </p>
     </div>
-    <div class="compact-grid">
-      <article class="info-card">
+    <div class="chip-grid">
+      <article class="topic-chip">
         <h3>Correspondence</h3>
-        <p>Letters and later communications form the core material.</p>
       </article>
-      <article class="info-card">
+      <article class="topic-chip">
         <h3>Duration</h3>
-        <p>The corpus spans decades of preservation and analysis.</p>
       </article>
-      <article class="info-card">
-        <h3>Claims</h3>
-        <p>Scientific, social, philosophical, and cosmological claims are present.</p>
+      <article class="topic-chip">
+        <h3>Technical claims</h3>
       </article>
-      <article class="info-card">
+      <article class="topic-chip">
+        <h3>Culture and society</h3>
+      </article>
+      <article class="topic-chip">
+        <h3>Earth relationship</h3>
+      </article>
+      <article class="topic-chip">
+        <h3>Other civilizations</h3>
+      </article>
+      <article class="topic-chip">
         <h3>Archives</h3>
-        <p>Spanish, French, and international researchers preserved and classified the material.</p>
       </article>
-      <article class="info-card">
-        <h3>Anomalies</h3>
-        <p>Some claims and patterns are treated as testable or contestable.</p>
-      </article>
-      <article class="info-card">
+      <article class="topic-chip">
         <h3>Counterarguments</h3>
-        <p>Hoax, literary, social, intelligence, and anomalous explanations remain in view.</p>
       </article>
     </div>
     <div class="section-cta">
       <a class="button button-secondary" href="#case">Explore Evidence &amp; Questions</a>
+    </div>
+  </section>
+
+  <section class="section-shell inside-section" aria-labelledby="inside-title">
+    <div class="section-heading split-heading">
+      <div>
+        <p class="eyebrow">Inside the dossier</p>
+        <h2 id="inside-title">A corpus of claims, descriptions, and open questions.</h2>
+      </div>
+      <p>
+        Topic pathways make the material easier to read, compare, and connect back to
+        source documents.
+      </p>
+    </div>
+    <div class="inside-grid">
+      <article class="inside-card">
+        <h3>Identity and appearance</h3>
+        <p>Topic pathway — source-linked material to review.</p>
+      </article>
+      <article class="inside-card">
+        <h3>Culture and social structure</h3>
+        <p>Claims and descriptions to map against source documents.</p>
+      </article>
+      <article class="inside-card">
+        <h3>Humanity and Earth</h3>
+        <p>Topic pathway — source-linked material to review.</p>
+      </article>
+      <article class="inside-card">
+        <h3>Science and technology</h3>
+        <p>Claims and descriptions to map against source documents.</p>
+      </article>
+      <article class="inside-card">
+        <h3>Other civilizations</h3>
+        <p>Topic pathway — source-linked material to review.</p>
+      </article>
+      <article class="inside-card">
+        <h3>Later communications</h3>
+        <p>Claims and descriptions to map against source documents.</p>
+      </article>
     </div>
   </section>
 
@@ -165,11 +248,11 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
       </p>
     </div>
     <ul class="method-strip">
-      <li>No belief required</li>
-      <li>Source first</li>
-      <li>Translation visible</li>
-      <li>Analysis labeled</li>
-      <li>Archives linked</li>
+      <li>Read carefully</li>
+      <li>Compare sources</li>
+      <li>Label analysis</li>
+      <li>Keep archives visible</li>
+      <li>Leave questions open</li>
     </ul>
     <div class="channel-links" aria-label="OON public channels">
       <a class="text-link" href="#archives">X / Twitter</a>
