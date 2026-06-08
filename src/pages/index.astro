@@ -8,9 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Oyagaa-Oomo Network home">
-      <span class="brand-name">Oyagaa-Oomo</span>
-      <span class="brand-divider" aria-hidden="true"></span>
-      <span class="brand-kicker">Network</span>
+      <span class="brand-name">Oyagaa-Oomo Network</span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#read">Read</a>
@@ -21,23 +19,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </nav>
   </header>
 
-  <section id="top" class="hero section-shell" aria-labelledby="page-title">
-    <div class="hero-inner">
-      <p class="eyebrow">Source-first research network</p>
-      <h1 id="page-title">A documented UFO dossier spanning decades.</h1>
-      <p class="hero-subtitle">
-        Letters, scans, translations, technical claims, anomalies, and competing explanations —
-        organized for examination, not belief.
-      </p>
-      <div class="cta-row" aria-label="Homepage actions">
-        <a class="button button-primary" href="#evidence">See the evidence</a>
-        <a class="button button-secondary" href="#read">Read one letter</a>
-        <a class="button button-ghost" href="#archives">Verify sources</a>
+  <section
+    id="top"
+    class="hero"
+    aria-labelledby="page-title"
+  >
+    <div
+      class="hero-backdrop"
+      style={`background-image: linear-gradient(180deg, rgba(3, 7, 18, 0.32), rgba(3, 7, 18, 0.68) 46%, rgba(3, 7, 18, 0.96)), radial-gradient(circle at 50% 38%, rgba(3, 7, 18, 0.04), rgba(3, 7, 18, 0.54) 62%), url("${import.meta.env.BASE_URL}images/oon-banner-v3.jpg")`}
+      aria-hidden="true"
+    ></div>
+    <div class="section-shell hero-shell">
+      <div class="hero-inner glass-panel">
+        <p class="eyebrow">Source-first research network</p>
+        <h1 id="page-title">A documented UFO dossier spanning decades.</h1>
+        <p class="hero-subtitle">
+          Letters, scans, translations, technical claims, anomalies, and competing explanations —
+          organized for examination, not belief.
+        </p>
+        <div class="cta-row" aria-label="Homepage actions">
+          <a class="button button-primary" href="#evidence">See the evidence</a>
+          <a class="button button-secondary" href="#read">Read one letter</a>
+          <a class="button button-ghost" href="#archives">Verify sources</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-shell" aria-labelledby="examination-title">
+  <section id="evidence" class="section-shell evidence-section" aria-labelledby="examination-title">
     <div class="section-heading">
       <p class="eyebrow">Why it deserves examination</p>
     </div>
@@ -62,6 +71,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Counterarguments</h2>
         <p>Hoax, literary, social, intelligence, anomalous.</p>
       </article>
+    </div>
+    <div class="evidence-mini">
+      <p>Strong claims are mapped with source status, competing explanations, and confidence levels.</p>
+      <a class="button button-secondary" href="#evidence">Explore Evidence &amp; Questions</a>
     </div>
   </section>
 
@@ -105,7 +118,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </article>
   </section>
 
-  <section id="watch" class="section-shell" aria-labelledby="entry-title">
+  <section id="watch" class="section-shell watch-section" aria-labelledby="watch-title">
+    <div class="section-heading split-heading">
+      <div>
+        <p class="eyebrow">Watch</p>
+        <h2 id="watch-title">Watch the dossier unfold.</h2>
+      </div>
+      <p>
+        OON videos provide a visual and audio entry point into the case while the website
+        organizes sources, reading paths, and evidence mapping.
+      </p>
+    </div>
+    <div class="watch-grid">
+      <article class="info-card glass-card">
+        <h3>OON YouTube</h3>
+        <p>TODO: Add verified channel link.</p>
+      </article>
+      <article class="info-card glass-card">
+        <h3>Podcast / visual explainers</h3>
+        <p>TODO: Add verified media pathway.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-shell" aria-labelledby="entry-title">
     <div class="section-heading">
       <p id="entry-title" class="eyebrow">Choose your entry</p>
     </div>
@@ -129,34 +165,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section id="evidence" class="section-shell evidence-section" aria-labelledby="evidence-title">
+  <section id="about" class="section-shell method-section" aria-labelledby="about-title">
     <div class="section-heading split-heading">
       <div>
-        <p class="eyebrow">Preview</p>
-        <h2 id="evidence-title">Evidence &amp; Questions</h2>
+        <p class="eyebrow">About OON</p>
+        <h2 id="about-title">A source-first research network.</h2>
       </div>
       <p>
-        Strong claims are mapped with source status, competing explanations, and confidence levels.
+        Oyagaa-Oomo Network is a human, international group studying, organizing, and
+        sharing material around the OOMO/UMMO dossier. The website provides structured
+        access; the network continues the discussion through public channels.
       </p>
     </div>
-    <div class="three-grid">
-      <article class="info-card">
-        <h3>Documented facts</h3>
-        <p>TODO</p>
-      </article>
-      <article class="info-card">
-        <h3>Claims to examine</h3>
-        <p>TODO</p>
-      </article>
-      <article class="info-card">
-        <h3>Competing explanations</h3>
-        <p>TODO</p>
-      </article>
-    </div>
-    <a class="button button-secondary section-cta" href="#evidence">Explore Evidence &amp; Questions</a>
-  </section>
-
-  <section id="method" class="section-shell method-section" aria-label="Method">
     <ul class="method-strip">
       <li>No belief required</li>
       <li>Source first</li>
@@ -166,7 +186,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section id="archives" class="section-shell ecosystem-section" aria-labelledby="ecosystem-title">
+  <section
+    id="archives"
+    class="section-shell ecosystem-section"
+    aria-labelledby="ecosystem-title"
+  >
     <div class="section-heading split-heading">
       <div>
         <p class="eyebrow">Source ecosystem</p>
@@ -176,7 +200,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         The website organizes and contextualizes material that remains linked to its source archives.
       </p>
     </div>
-    <div class="ecosystem-list">
+    <div
+      class="ecosystem-list"
+      style={`background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.92)), url("${import.meta.env.BASE_URL}images/oon-banner-v3.jpg")`}
+    >
       <article class="source-row">
         <p>Primary archive</p>
         <h3>UMMO-Ciencias</h3>
