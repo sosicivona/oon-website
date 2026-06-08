@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
 ---
 
 <BaseLayout
@@ -15,7 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <a href="#watch">Watch</a>
       <a href="#evidence">Evidence</a>
       <a href="#archives">Archives</a>
-      <a href="#method">About</a>
+      <a href="#about">About</a>
     </nav>
   </header>
 
@@ -26,7 +31,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   >
     <div
       class="hero-backdrop"
-      style={`background-image: linear-gradient(180deg, rgba(3, 7, 18, 0.32), rgba(3, 7, 18, 0.68) 46%, rgba(3, 7, 18, 0.96)), radial-gradient(circle at 50% 38%, rgba(3, 7, 18, 0.04), rgba(3, 7, 18, 0.54) 62%), url("${import.meta.env.BASE_URL}images/oon-banner-v3.jpg")`}
+      style={`background-image: linear-gradient(180deg, rgba(3, 7, 18, 0.32), rgba(3, 7, 18, 0.68) 46%, rgba(3, 7, 18, 0.96)), radial-gradient(circle at 50% 38%, rgba(3, 7, 18, 0.04), rgba(3, 7, 18, 0.54) 62%), url("${bannerImage}")`}
       aria-hidden="true"
     ></div>
     <div class="section-shell hero-shell">
@@ -202,7 +207,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
     <div
       class="ecosystem-list"
-      style={`background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.92)), url("${import.meta.env.BASE_URL}images/oon-banner-v3.jpg")`}
+      style={`background-image: linear-gradient(rgba(3, 7, 18, 0.88), rgba(3, 7, 18, 0.92)), url("${bannerImage}")`}
     >
       <article class="source-row">
         <p>Primary archive</p>
