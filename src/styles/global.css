@@ -223,6 +223,13 @@ p {
   font-size: 1.15rem;
 }
 
+.hero-identity {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  color: #d8e1e8;
+  font-size: 0.98rem;
+}
+
 .cta-row,
 .card-actions {
   display: flex;
@@ -336,6 +343,10 @@ p {
   padding-top: 3.5rem;
 }
 
+.case-section {
+  padding-top: 4rem;
+}
+
 .evidence-mini {
   display: flex;
   align-items: center;
@@ -356,6 +367,10 @@ p {
   padding: 1.35rem;
   border: 1px solid rgba(106, 168, 189, 0.24);
   box-shadow: var(--shadow);
+}
+
+.featured-heading .eyebrow {
+  margin-bottom: 0;
 }
 
 .source-list {
@@ -552,6 +567,11 @@ dd {
     margin-right: 0;
     margin-left: 0;
     font-size: 1.02rem;
+  }
+
+  .hero-identity {
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .cta-row,
