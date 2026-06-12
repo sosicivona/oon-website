@@ -1,5 +1,7 @@
 ---
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
 
 const navItems = [
@@ -8,7 +10,7 @@ const navItems = [
   { label: "Themes", href: link("themes/") },
   { label: "Evidence & Questions", href: link("evidence-questions/") },
   { label: "Watch", href: link("watch/") },
-  { label: "Sources", href: `${basePath}#sources` },
+  { label: "Sources", href: link("sources/") },
   { label: "About", href: link("about/") },
 ];
 ---

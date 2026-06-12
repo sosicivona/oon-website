@@ -4,14 +4,16 @@ import SourceBadge from "../components/SourceBadge.astro";
 import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
 const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
 ---
 
 <BaseLayout
   title="Oyagaa-Oomo Network | Reading the UMMO/OOMO dossier"
-  description="A reading-first beta website for the Oyagaa-Oomo Network and the UMMO/OOMO correspondence dossier."
+  description="A reading-first website for the Oyagaa-Oomo Network and the UMMO/OOMO correspondence dossier."
 >
   <section class="hero-beta" aria-labelledby="page-title">
     <div
@@ -20,7 +22,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
       aria-hidden="true"
     ></div>
     <div class="hero-beta-content">
-      <p class="eyebrow">Reading-first beta</p>
+      <p class="eyebrow">The UMMO/OOMO dossier</p>
       <h1 id="page-title">
         For sixty years, letters have arrived from a civilization claiming to come from
         another world.
@@ -29,7 +31,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
         They did not ask us to believe them. They asked to be read, doubted, and thought
         about freely.
       </p>
-      <a class="button button-primary" href={link("start-here/")}>Start reading</a>
+      <a class="button button-primary" href={link("read/")}>Start reading</a>
     </div>
   </section>
 
@@ -37,7 +39,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     id="begin"
     eyebrow="Begin with the letters"
     title="Read before deciding."
-    lede="The beta starts with reading paths, short context notes, and source-status language. The reader stays free to compare, question, and move slowly."
+    lede="Start with the correspondence itself, then move outward to themes, source chains, archives, and open questions."
   >
     <div class="two-column">
       <ThemeCard
@@ -48,7 +50,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
       />
       <ThemeCard
         title="Read"
-        text="A placeholder reading path for historical letters, later communications, source status, and archive links."
+        text="A guided entry point into historical letters, later communications, source status, and archive links."
         href={link("read/")}
         meta="Corpus entry"
       />
@@ -59,7 +61,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     id="themes"
     eyebrow="Explore the themes"
     title="A worldview appears through repeated topics."
-    lede="The corpus describes identities, culture, humanity, technology, social organization, and other civilizations. Beta theme pages keep these as topic pathways, not conclusions."
+    lede="The corpus describes identities, culture, humanity, technology, social organization, and other civilizations. Theme pathways help readers follow repeated topics without turning them into conclusions."
   >
     <div class="card-grid">
       <ThemeCard title="Worldview" text="Claims and descriptions to read across the corpus." href={link("themes/")} />
@@ -72,23 +74,23 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     id="evidence"
     eyebrow="Evidence & Questions"
     title="Questions stay visible."
-    lede="Evidence work belongs beside the reading experience. Items remain placeholders until source chains, chronology, and assessments are reviewed."
+    lede="Evidence & Questions is where cases can be examined without turning them into conclusions."
   >
     <div class="status-grid">
       <article>
         <span>Source located</span>
-        <h3>Document record</h3>
-        <p>Placeholder for source-linked material.</p>
+        <h3>Item</h3>
+        <p>A source-linked object prepared for closer review.</p>
       </article>
       <article>
         <span>Chronology under review</span>
-        <h3>Sequence question</h3>
-        <p>Placeholder for timeline comparison.</p>
+        <h3>Chronology status</h3>
+        <p>Dates and sequence remain visible during review.</p>
       </article>
       <article>
         <span>Assessment pending</span>
-        <h3>Competing reading</h3>
-        <p>Placeholder for counterarguments and open questions.</p>
+        <h3>Counter-reading</h3>
+        <p>Alternative explanations remain part of the review.</p>
       </article>
     </div>
     <a class="text-link" href={link("evidence-questions/")}>Open Evidence & Questions</a>
@@ -102,7 +104,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     variant="soft-panel"
   >
     <SourceBadge />
-    <a class="text-link" href={link("source-continuity/")}>Review source-status language</a>
+    <a class="text-link" href={link("source-continuity/")}>Read the source-continuity note</a>
   </Section>
 
   <Section
@@ -112,8 +114,8 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     lede="OON videos and visual explainers can introduce the case while the website keeps source review and reading paths visible."
   >
     <div class="two-column">
-      <ThemeCard title="OON YouTube" text="Curated channel link pending." href={link("watch/")} />
-      <ThemeCard title="Visual explainers" text="Selected media pathway pending." href={link("watch/")} />
+      <ThemeCard title="OON YouTube" text="Public videos and visual explainers." href={link("watch/")} />
+      <ThemeCard title="OON on X" text="Public updates and discussion threads." href={link("watch/")} />
     </div>
   </Section>
 
@@ -121,15 +123,16 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     id="sources"
     eyebrow="Sources / Archives"
     title="Where the reading points back."
-    lede="The beta links toward source archives and public OON channels without replacing them."
+    lede="The site guides readers toward source archives and public OON channels without replacing them."
   >
     <div class="source-list">
-      <article><span>Primary archive</span><strong>UMMO-Ciencias</strong><em>To verify</em></article>
-      <article><span>French archive</span><strong>Ummo-Sciences FR</strong><em>To verify</em></article>
-      <article><span>English access</span><strong>Ummo-Sciences EN</strong><em>To verify</em></article>
-      <article><span>Reference wiki</span><strong>UmmoWiki</strong><em>To verify</em></article>
-      <article><span>Living discussion</span><strong>OON X / Twitter</strong><em>Link pending</em></article>
-      <article><span>Video layer</span><strong>OON YouTube</strong><em>Link pending</em></article>
+      <article><span>Primary archive</span><strong>UMMO-Ciencias</strong><em>Archive</em></article>
+      <article><span>French archive</span><strong>Ummo-Sciences FR</strong><em>Archive</em></article>
+      <article><span>English access</span><strong>Ummo-Sciences EN</strong><em>Archive</em></article>
+      <article><span>Reference wiki</span><strong>UmmoWiki</strong><em>Archive</em></article>
+      <article><span>Living discussion</span><strong>OON X / Twitter</strong><em>Public channel</em></article>
+      <article><span>Video layer</span><strong>OON YouTube</strong><em>Public channel</em></article>
     </div>
+    <a class="text-link" href={link("sources/")}>Open Sources</a>
   </Section>
 </BaseLayout>

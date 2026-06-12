@@ -1,18 +1,22 @@
 ---
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
 ---
 
 <footer class="site-footer">
   <div>
     <p class="footer-title">Oyagaa-Oomo Network</p>
-    <p>A reading-first beta for the UMMO/OOMO correspondence dossier.</p>
+    <p>A reading-first gateway into the UMMO/OOMO correspondence dossier.</p>
   </div>
   <nav aria-label="Footer navigation">
     <a href={link("start-here/")}>Start Here</a>
     <a href={link("read/")}>Read</a>
     <a href={link("themes/")}>Themes</a>
-    <a href={link("source-continuity/")}>Source Continuity</a>
+    <a href={link("evidence-questions/")}>Evidence & Questions</a>
+    <a href={link("watch/")}>Watch</a>
+    <a href={link("sources/")}>Sources</a>
     <a href={link("about/")}>About</a>
   </nav>
 </footer>
