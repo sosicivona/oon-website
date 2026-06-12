@@ -19,7 +19,12 @@ const navItems = [
   <a class="brand" href={basePath} aria-label="Oyagaa-Oomo Network home">
     <span>Oyagaa-Oomo Network</span>
   </a>
-  <nav class="site-nav" aria-label="Primary navigation">
-    {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-  </nav>
+  <div class="header-actions">
+    <nav class="site-nav" aria-label="Primary navigation">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+      Light
+    </button>
+  </div>
 </header>

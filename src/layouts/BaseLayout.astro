@@ -16,6 +16,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <script is:inline>
+      (() => {
+        const storedTheme = (() => {
+          try {
+            return localStorage.getItem("oon-theme");
+          } catch {
+            return null;
+          }
+        })();
+        document.documentElement.dataset.theme = storedTheme === "light" ? "light" : "dark";
+      })();
+    </script>
     <title>{title}</title>
   </head>
   <body>
@@ -25,5 +37,35 @@ const {
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const toggle = document.querySelector("[data-theme-toggle]");
+
+        if (!toggle) {
+          return;
+        }
+
+        const updateToggle = () => {
+          const isLight = root.dataset.theme === "light";
+          toggle.textContent = isLight ? "Dark" : "Light";
+          toggle.setAttribute("aria-label", `Switch to ${isLight ? "dark" : "light"} theme`);
+          toggle.setAttribute("aria-pressed", String(isLight));
+        };
+
+        updateToggle();
+
+        toggle.addEventListener("click", () => {
+          const nextTheme = root.dataset.theme === "light" ? "dark" : "light";
+          root.dataset.theme = nextTheme;
+          try {
+            localStorage.setItem("oon-theme", nextTheme);
+          } catch {
+            // Theme still changes for the current page if storage is blocked.
+          }
+          updateToggle();
+        });
+      })();
+    </script>
   </body>
 </html>
