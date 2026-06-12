@@ -173,33 +173,33 @@ main {
 .hero-beta-content {
   position: relative;
   display: grid;
-  place-items: center;
+  place-items: center start;
   width: min(calc(100% - 2rem), 74rem);
   min-height: calc(92vh - 4.5rem);
   margin: 0 auto;
   padding: 5rem 0;
-  text-align: center;
+  text-align: left;
 }
 
 .hero-panel {
-  max-width: 56rem;
+  max-width: 47rem;
   padding: 2rem;
   border: 1px solid rgba(184, 196, 207, 0.12);
-  background: rgba(7, 17, 31, 0.5);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
-  backdrop-filter: blur(18px);
+  background: rgba(7, 17, 31, 0.32);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
 }
 
 .hero-panel h1 {
-  max-width: 18ch;
-  margin: 0 auto;
+  max-width: 20ch;
+  margin: 0;
   font-size: clamp(2.45rem, 5vw, 4rem);
   line-height: 1.02;
 }
 
 .hero-quote {
   max-width: 44rem;
-  margin: 1.35rem auto 2rem;
+  margin: 1.35rem 0 2rem;
   color: #d8e1e8;
   font-family: var(--serif);
   font-size: clamp(1.35rem, 3vw, 2.35rem);
