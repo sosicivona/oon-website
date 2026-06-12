@@ -1,0 +1,22 @@
+---
+const {
+  id,
+  eyebrow,
+  title,
+  lede,
+  variant = "",
+} = Astro.props;
+---
+
+<section id={id} class:list={["section", variant]}>
+  <div class="section-inner">
+    {(eyebrow || title || lede) && (
+      <div class="section-heading">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        {title && <h2>{title}</h2>}
+        {lede && <p class="section-lede">{lede}</p>}
+      </div>
+    )}
+    <slot />
+  </div>
+</section>

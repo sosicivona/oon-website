@@ -1,0 +1,38 @@
+---
+import Section from "../components/Section.astro";
+import ThemeCard from "../components/ThemeCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const basePath = import.meta.env.BASE_URL;
+const link = (path) => `${basePath}${path}`;
+---
+
+<BaseLayout
+  title="Start Here | Oyagaa-Oomo Network"
+  description="A calm starting point for reading the UMMO/OOMO correspondence dossier."
+>
+  <Section
+    eyebrow="Start Here"
+    title="Begin with the reading posture."
+    lede="The site treats the dossier as a corpus to read, compare, and question. It does not settle the origin claim for the reader."
+    variant="page-hero"
+  >
+    <div class="card-grid">
+      <ThemeCard
+        title="What the corpus is"
+        text="Letters, later communications, translations, archive records, and analysis notes."
+        href={link("read/")}
+      />
+      <ThemeCard
+        title="How to read"
+        text="Keep source text, translation, context, and analysis in separate layers."
+        href={link("source-continuity/")}
+      />
+      <ThemeCard
+        title="What stays open"
+        text="Origin, chronology, interpretation, and competing explanations remain under review."
+        href={link("evidence-questions/")}
+      />
+    </div>
+  </Section>
+</BaseLayout>

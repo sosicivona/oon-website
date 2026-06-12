@@ -1,0 +1,26 @@
+---
+import Section from "../components/Section.astro";
+import ThemeCard from "../components/ThemeCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Themes | Oyagaa-Oomo Network"
+  description="Theme pathways for reading the UMMO/OOMO dossier."
+>
+  <Section
+    eyebrow="Themes"
+    title="Worldview-first reading paths."
+    lede="The corpus describes a worldview through repeated topics. The beta keeps them as pathways for reading and comparison."
+    variant="page-hero"
+  >
+    <div class="card-grid">
+      <ThemeCard title="Identity and appearance" text="Topic pathway for source-linked material." />
+      <ThemeCard title="Culture and social structure" text="Claims and descriptions to map against source documents." />
+      <ThemeCard title="Humanity and Earth" text="A reading path for what the letters say about human life and Earth." />
+      <ThemeCard title="Science and technology" text="Technical claims held for source review and comparison." />
+      <ThemeCard title="Philosophy and social organization" text="Ideas to read in context before analysis." />
+      <ThemeCard title="Other civilizations" text="Claims and descriptions to keep separate from assessment." />
+    </div>
+  </Section>
+</BaseLayout>
