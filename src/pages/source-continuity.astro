@@ -1,0 +1,26 @@
+---
+import Section from "../components/Section.astro";
+import SourceBadge from "../components/SourceBadge.astro";
+import ThemeCard from "../components/ThemeCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Source Continuity | Oyagaa-Oomo Network"
+  description="Source-status language and source-chain placeholders for the UMMO/OOMO dossier."
+>
+  <Section
+    eyebrow="Source Continuity"
+    title="Make the source chain visible."
+    lede="A source chain shows where a text sits: source account, archive record, translation status, context, and analysis boundary."
+    variant="page-hero"
+  >
+    <SourceBadge />
+    <div class="card-grid">
+      <ThemeCard title="Source account" text="What source researchers recognize in the communication chain." />
+      <ThemeCard title="Archive record" text="Where the item can be located or checked." />
+      <ThemeCard title="Translation status" text="What language layer the reader is seeing." />
+      <ThemeCard title="Analysis boundary" text="Where OON commentary begins." />
+    </div>
+  </Section>
+</BaseLayout>

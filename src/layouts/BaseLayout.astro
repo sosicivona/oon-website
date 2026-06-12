@@ -1,7 +1,12 @@
 ---
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
-const { title = "Oyagaa-Oomo Network Website" } = Astro.props;
+const {
+  title = "Oyagaa-Oomo Network",
+  description = "A reading-first public entry point for the UMMO/OOMO correspondence dossier.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -10,11 +15,15 @@ const { title = "Oyagaa-Oomo Network Website" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <title>{title}</title>
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

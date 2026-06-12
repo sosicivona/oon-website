@@ -1,0 +1,53 @@
+---
+import Section from "../components/Section.astro";
+import ThemeCard from "../components/ThemeCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Evidence & Questions | Oyagaa-Oomo Network"
+  description="Neutral evidence placeholders and open questions for the UMMO/OOMO dossier."
+>
+  <Section
+    eyebrow="Evidence & Questions"
+    title="Assessment comes after source review."
+    lede="Evidence items are placeholders until source chain, chronology, translation status, and competing explanations are mapped."
+    variant="page-hero"
+  >
+    <div class="status-grid">
+      <article>
+        <span>Source located</span>
+        <h3>Archive item</h3>
+        <p>Document reference pending review.</p>
+      </article>
+      <article>
+        <span>To analyze</span>
+        <h3>Claim cluster</h3>
+        <p>Claims and counter-readings to be separated.</p>
+      </article>
+      <article>
+        <span>Chronology under review</span>
+        <h3>Sequence question</h3>
+        <p>Dates and order to be checked against source records.</p>
+      </article>
+      <article>
+        <span>Assessment pending</span>
+        <h3>Open question</h3>
+        <p>Interpretation remains unset.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    eyebrow="Future backlog"
+    title="Categories for later review."
+    lede="These categories are not homepage features. They are parking places for later source review."
+  >
+    <div class="card-grid compact">
+      <ThemeCard title="Public health claims" text="Backlog category." />
+      <ThemeCard title="Geopolitical claims" text="Backlog category." />
+      <ThemeCard title="Forecast claims" text="Backlog category." />
+      <ThemeCard title="Economic claims" text="Backlog category." />
+    </div>
+  </Section>
+</BaseLayout>

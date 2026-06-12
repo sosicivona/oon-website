@@ -1,0 +1,16 @@
+---
+const {
+  title,
+  text,
+  href,
+  meta,
+} = Astro.props;
+
+const Element = href ? "a" : "article";
+---
+
+<Element class="theme-card" href={href}>
+  {meta && <p class="card-meta">{meta}</p>}
+  <h3>{title}</h3>
+  <p>{text}</p>
+</Element>

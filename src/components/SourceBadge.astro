@@ -1,0 +1,14 @@
+---
+const {
+  label = "Recognized source account",
+  explanation,
+} = Astro.props;
+
+const defaultExplanation =
+  "Recognized by source researchers as part of the later UMMO/OOMO communication chain; this does not ask the reader to accept the origin claim.";
+---
+
+<div class="source-badge">
+  <span>{label}</span>
+  <p>{explanation ?? defaultExplanation}</p>
+</div>
