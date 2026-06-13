@@ -14,53 +14,73 @@ const link = (path) => `${basePath}${path}`;
   description="A calm starting point for reading the UMMO/OOMO correspondence dossier."
 >
   <Section
-    eyebrow="Start Here"
-    title="Begin with the case, then the reading."
-    lede="The UMMO/OOMO dossier is the full historical phenomenon. The corpus is the body of letters, messages, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
+    eyebrow="Start"
+    title="Begin with the shape of the dossier."
+    lede="The UMMO/OOMO dossier is the wider historical phenomenon. The corpus is the body of letters, communications, reports, notes, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
     variant="page-hero"
   >
     <div class="card-grid">
       <ThemeCard
-        title="What the dossier is"
-        text="A correspondence and documentary phenomenon made of source texts, archive records, translations, analysis, and contested interpretations."
+        title="What is this?"
+        text="A long-running documentary and communication dossier made of source material, archive records, translations, analysis, and unresolved questions."
         href={link("read/")}
       />
       <ThemeCard
-        title="What the corpus is"
-        text="The letters, messages, and source texts that readers can examine through source status and translation status."
-        href={link("read/")}
+        title="Why is it still studied?"
+        text="Researchers continue to compare the scale, structure, source paths, technical range, later communications, and competing interpretations."
+        href={link("timeline/")}
       />
       <ThemeCard
-        title="What OON does"
-        text="OON organizes reading paths and context. It does not replace the archives and is not the source."
+        title="What does OON do?"
+        text="OON organizes reading paths, source-status language, public orientation, and context while pointing readers back to the archives."
         href={link("sources/")}
       />
       <ThemeCard
-        title="How to read"
-        text="Read the corpus first, then compare source chain, translation status, context, and interpretation."
-        href={link("source-continuity/")}
-      />
-      <ThemeCard
-        title="What to read first"
-        text="Start with correspondence pathways before moving into themes, evidence questions, or public commentary."
+        title="How can I begin?"
+        text="Begin with one communication, one topic, one period, or one source path. The reader does not need to start with everything."
         href={link("read/")}
       />
       <ThemeCard
-        title="What is not being claimed"
-        text="The site does not claim final authority, special access, or a settled interpretation of the dossier."
+        title="What is not being claimed?"
+        text="This site does not replace archives, settle authorship, claim origin, or ask for a conclusion in advance."
         href={link("evidence-questions/")}
+      />
+      <ThemeCard
+        title="Where next?"
+        text="Use Timeline for the arc, Read for the material, Topics inside Read for browse mode, and Sources for verification."
+        href={link("timeline/")}
       />
     </div>
   </Section>
 
   <Section
-    eyebrow="Source status"
-    title="Source status is part of the reading."
-    lede="Each page should make archive location, communication-chain status, language or translation status, and analysis boundary visible."
+    eyebrow="Entry paths"
+    title="Choose the question you are actually asking."
+    lede="The launch navigation describes what the reader is trying to do. The internal page structure describes how the material is organized."
+  >
+    <div class="card-grid compact">
+      <ThemeCard title="Understand the arc" text="Use Timeline to see high-level phases before reading details." href={link("timeline/")} />
+      <ThemeCard title="Enter the material" text="Use Read to browse by topic, period, type, essential documents, or future search." href={link("read/")} />
+      <ThemeCard title="Trace sources" text="Use Sources to return to archive paths, public channels, and source-status notes." href={link("sources/")} />
+    </div>
+  </Section>
+
+  <Section
+    id="faq"
+    eyebrow="FAQ preview"
+    title="High-friction questions belong in context."
+    lede="FAQ material should reduce confusion without making verdict language the entry point."
+    variant="soft-panel"
   >
     <div class="two-column">
-      <ThemeCard title="No acceptance required" text="Source notes do not ask the reader to accept the origin claim." />
-      <ThemeCard title="Not a dismissal" text="Open questions remain available for careful comparison and critique." />
+      <ThemeCard
+        title="Why is the dossier still studied after José Luis Jordán Peña's authorship claim?"
+        text="That authorship claim is a central explanation and must be treated seriously. It is not the whole history of the dossier. Archive and research communities continued to preserve, classify, and compare the material because of its scale, internal structure, technical range, later communications, and unresolved source-continuity questions."
+      />
+      <ThemeCard
+        title="How should a newcomer read?"
+        text="Begin with source paths, chronology, communication type, translation status, and interpretation boundaries before forming a view."
+      />
     </div>
   </Section>
 </BaseLayout>

@@ -17,7 +17,7 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Sources / Archives"
     title="Where the reading points back."
-    lede="The archive sites remain the true repositories. This website is an interface for entering the dossier, following source chains, and returning to the archives."
+    lede="The archive sites remain the canonical repositories. This website is an interface for entering the dossier, following source paths, and returning to the archives."
     variant="page-hero"
   >
     <div class="card-grid">
@@ -45,9 +45,22 @@ const link = (path) => `${basePath}${path}`;
   </Section>
 
   <Section
+    eyebrow="Reading copies"
+    title="Local access must remain source-visible."
+    lede="OON may later provide curated reading copies or downloadable study versions. Every local copy should point back to archive/source paths and keep source status, translation status, and OON interpretation distinct."
+  >
+    <div class="card-grid compact">
+      <ThemeCard title="Archive path" text="Where the reader can return to source or archive location." />
+      <ThemeCard title="Source status" text="How the material is recognized, located, or connected to a source chain." />
+      <ThemeCard title="Translation status" text="What language layer the reader is seeing." />
+      <ThemeCard title="OON interpretation" text="Commentary and analysis remain separate from source material." />
+    </div>
+  </Section>
+
+  <Section
     eyebrow="Public OON channels"
     title="Where discussion continues."
-    lede="Public channels can orient readers and announce new work, while source review stays visible on the site."
+    lede="Public channels can orient readers and announce work, while archive and source review stay visible on the site."
   >
     <div class="two-column">
       <ThemeCard

@@ -8,15 +8,17 @@ const link = (path) => `${basePath}${path}`;
 <footer class="site-footer">
   <div>
     <p class="footer-title">Oyagaa-Oomo Network</p>
-    <p>A reading-first gateway into the UMMO/OOMO correspondence dossier.</p>
+    <p>A reading-first interface for entering the UMMO/OOMO dossier and returning to source paths.</p>
   </div>
   <nav aria-label="Footer navigation">
-    <a href={link("start-here/")}>Start Here</a>
+    <a href={link("about/")}>About OON</a>
+    <a href={link("start-here/#faq")}>FAQ</a>
+    <a href={link("source-continuity/")}>Source Continuity</a>
+    <a href={link("watch/")}>Watch / Public Channels</a>
+    <a href={link("evidence-questions/")}>Questions & Cases</a>
+    <a href={link("themes/")}>Topics</a>
+    <a href={link("timeline/")}>Timeline</a>
     <a href={link("read/")}>Read</a>
-    <a href={link("themes/")}>Themes</a>
-    <a href={link("evidence-questions/")}>Evidence & Questions</a>
-    <a href={link("watch/")}>Watch</a>
     <a href={link("sources/")}>Sources</a>
-    <a href={link("about/")}>About</a>
   </nav>
 </footer>
