@@ -17,7 +17,7 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Sources / Archives"
     title="Where the reading points back."
-    lede="This site should guide readers toward archive sources, public OON channels, and source-status notes without replacing the archives themselves."
+    lede="The archive sites remain the true repositories. This website is an interface for entering the dossier, following source chains, and returning to the archives."
     variant="page-hero"
   >
     <div class="card-grid">
@@ -51,14 +51,15 @@ const link = (path) => `${basePath}${path}`;
   >
     <div class="two-column">
       <ThemeCard
-        title="OON on X"
-        text="Public updates, posts, and discussion threads. Link to be verified before public release."
+        title="OON public channels"
+        text="Public updates, videos, posts, and discussion threads. Links to be verified before public release."
         meta="Public channel"
       />
       <ThemeCard
-        title="OON YouTube"
-        text="Public videos and explainers. Link to be verified before public release."
-        meta="Video channel"
+        title="Source Continuity"
+        text="Methodology note for source-chain language, recognized source accounts, translation status, and analysis boundaries."
+        href={link("source-continuity/")}
+        meta="Methodology"
       />
     </div>
   </Section>

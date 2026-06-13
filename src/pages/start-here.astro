@@ -16,14 +16,24 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Start Here"
     title="Begin with the case, then the reading."
-    lede="The UMMO/OOMO dossier is approached here as a correspondence corpus: letters, later communications, translations, archive records, claims, and analysis notes."
+    lede="The UMMO/OOMO dossier is the full historical phenomenon. The corpus is the body of letters, messages, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
     variant="page-hero"
   >
     <div class="card-grid">
       <ThemeCard
-        title="What this site is"
-        text="A calm reading gateway that keeps source material, context, and open questions visible."
+        title="What the dossier is"
+        text="A correspondence and documentary phenomenon made of source texts, archive records, translations, analysis, and contested interpretations."
         href={link("read/")}
+      />
+      <ThemeCard
+        title="What the corpus is"
+        text="The letters, messages, and source texts that readers can examine through source status and translation status."
+        href={link("read/")}
+      />
+      <ThemeCard
+        title="What OON does"
+        text="OON organizes reading paths and context. It does not replace the archives and is not the source."
+        href={link("sources/")}
       />
       <ThemeCard
         title="How to read"
@@ -36,8 +46,8 @@ const link = (path) => `${basePath}${path}`;
         href={link("read/")}
       />
       <ThemeCard
-        title="What remains open"
-        text="Origin, chronology, interpretation, and competing explanations are not settled for the reader."
+        title="What is not being claimed"
+        text="The site does not claim final authority, special access, or a settled interpretation of the dossier."
         href={link("evidence-questions/")}
       />
     </div>
@@ -49,7 +59,7 @@ const link = (path) => `${basePath}${path}`;
     lede="Each page should make archive location, communication-chain status, language or translation status, and analysis boundary visible."
   >
     <div class="two-column">
-      <ThemeCard title="Not a proof claim" text="Source notes do not ask the reader to accept the origin claim." />
+      <ThemeCard title="No acceptance required" text="Source notes do not ask the reader to accept the origin claim." />
       <ThemeCard title="Not a dismissal" text="Open questions remain available for careful comparison and critique." />
     </div>
   </Section>
