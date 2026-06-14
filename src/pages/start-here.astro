@@ -11,12 +11,12 @@ const link = (path) => `${basePath}${path}`;
 
 <BaseLayout
   title="Start Here | Oyagaa-Oomo Network"
-  description="A calm starting point for reading the UMMO/OOMO correspondence dossier."
+  description="A calm starting point for reading the UMMO correspondence dossier."
 >
   <Section
     eyebrow="Start"
     title="Begin with the shape of the dossier."
-    lede="The UMMO/OOMO dossier is the wider historical phenomenon. The corpus is the body of letters, communications, reports, notes, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
+    lede="The UMMO dossier is the wider historical phenomenon. The corpus is the body of letters, communications, reports, notes, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
     variant="page-hero"
   >
     <div class="card-grid">
@@ -40,13 +40,9 @@ const link = (path) => `${basePath}${path}`;
         href={link("read/")}
       />
       <ThemeCard
-        title="What is not being claimed?"
-        text="This site does not replace archives, settle authorship, claim origin, or ask for a conclusion in advance."
+        title="What this site does — and does not do"
+        text="This site does not replace archives, settle authorship, or claim origin."
         href={link("start-here/#faq")}
-      />
-      <ThemeCard
-        title="Where next?"
-        text="Use Timeline for the arc, Read for the material, Topics inside Read for browse mode, and Sources for verification."
       />
     </div>
   </Section>
@@ -54,11 +50,10 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Entry paths"
     title="Choose the question you are actually asking."
-    lede="The launch navigation describes what the reader is trying to do. The internal page structure describes how the material is organized."
   >
     <div class="card-grid compact">
       <ThemeCard title="Understand the arc" text="Use Timeline to see high-level phases before reading details." href={link("timeline/")} />
-      <ThemeCard title="Enter the material" text="Use Read to browse by topic, period, type, essential documents, or future search." href={link("read/")} />
+      <ThemeCard title="Enter the material" text="Use Read to browse by topic, period, type, or source path." href={link("read/")} />
       <ThemeCard title="Trace sources" text="Use Sources to return to archive paths, public channels, and source-status notes." href={link("sources/")} />
     </div>
   </Section>
@@ -67,7 +62,6 @@ const link = (path) => `${basePath}${path}`;
     id="faq"
     eyebrow="FAQ preview"
     title="High-friction questions belong in context."
-    lede="FAQ material should reduce confusion without making verdict language the entry point."
     variant="soft-panel"
   >
     <div class="two-column">

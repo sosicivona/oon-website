@@ -12,7 +12,7 @@ const link = (path) => `${basePath}${path}`;
 
 <BaseLayout
   title="Sources | Oyagaa-Oomo Network"
-  description="Archive sources, public OON channels, and source-status language for the UMMO/OOMO dossier."
+  description="Archive sources and source-status language for the UMMO dossier."
 >
   <Section
     eyebrow="Sources / Archives"
@@ -45,33 +45,12 @@ const link = (path) => `${basePath}${path}`;
   </Section>
 
   <Section
-    id="public-channels"
-    eyebrow="Public OON channels"
-    title="Where discussion continues."
-    lede="Public channels can orient readers and announce work, while archive and source review stay visible on the site."
-  >
-    <div class="two-column">
-      <ThemeCard
-        title="OON public channels"
-        text="Public updates, videos, posts, and discussion threads."
-        meta="Public channel"
-      />
-      <ThemeCard
-        title="Source Continuity"
-        text="Methodology note for source-chain language, recognized source accounts, translation status, and analysis boundaries."
-        href={link("source-continuity/")}
-        meta="Methodology"
-      />
-    </div>
-  </Section>
-
-  <Section
     eyebrow="Source-status language"
     title="Archive access is not the same as assessment."
     lede="Source-status notes help separate archive location, communication-chain status, translation status, and interpretation."
     variant="soft-panel"
   >
     <SourceBadge />
-    <a class="text-link" href={link("source-continuity/")}>Read the source-continuity note</a>
+    <a class="text-link" href={link("source-continuity/")}>Source Continuity</a>
   </Section>
 </BaseLayout>
