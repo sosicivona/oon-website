@@ -1,0 +1,11 @@
+---
+const {
+  text = "TODO: Add source excerpt only after source review.",
+  attribution = "Attribution pending review",
+} = Astro.props;
+---
+
+<blockquote class="excerpt-block">
+  <p>{text}</p>
+  <footer>{attribution}</footer>
+</blockquote>

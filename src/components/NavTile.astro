@@ -1,0 +1,15 @@
+---
+const {
+  title,
+  text,
+  href,
+  meta,
+} = Astro.props;
+---
+
+<a class="nav-tile" href={href}>
+  {meta && <p class="card-meta">{meta}</p>}
+  <h3>{title}</h3>
+  <p>{text}</p>
+  <span aria-hidden="true" class="tile-arrow">→</span>
+</a>

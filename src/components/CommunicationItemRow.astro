@@ -1,0 +1,26 @@
+---
+import SourceStatusLabel from "./SourceStatusLabel.astro";
+import TypeChip from "./TypeChip.astro";
+
+const {
+  title = "Placeholder communication item",
+  reference = "Reference pending review",
+  category = "Communication item",
+  date = "Date pending review",
+  translation = "Translation status pending review",
+  status = "Source-linked metadata pending review",
+} = Astro.props;
+---
+
+<article class="communication-row">
+  <div class="communication-row-main">
+    <p class="row-meta">{date}</p>
+    <h3>{title}</h3>
+    <p>{reference}</p>
+  </div>
+  <div class="communication-row-tags">
+    <TypeChip label={category} />
+    <SourceStatusLabel label={translation} />
+    <SourceStatusLabel label={status} tone="review" />
+  </div>
+</article>

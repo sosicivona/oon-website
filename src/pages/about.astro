@@ -1,6 +1,6 @@
 ---
+import InfoPanel from "../components/InfoPanel.astro";
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -11,13 +11,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <Section
     eyebrow="About"
     title="A human network for source-first study."
-    lede="Oyagaa-Oomo Network is an international group of independent researchers and contributors studying, translating, discussing, and sharing material around the OOMO/UMMO dossier."
+    lede="Oyagaa-Oomo Network is an international group of independent researchers and contributors studying, translating, discussing, and sharing material around the UMMO dossier."
     variant="page-hero"
   >
     <div class="card-grid compact">
-      <ThemeCard title="Read carefully" text="Keep source text and interpretation separate." />
-      <ThemeCard title="Compare sources" text="Let source chain and context remain visible." />
-      <ThemeCard title="Leave questions open" text="The reader stays free to read, doubt, and decide." />
+      <InfoPanel title="Read carefully" text="Keep source text and interpretation separate." />
+      <InfoPanel title="Compare sources" text="Let source chain and context remain visible." />
+      <InfoPanel title="Leave questions open" text="The reader stays free to read, doubt, and decide." />
     </div>
   </Section>
 </BaseLayout>

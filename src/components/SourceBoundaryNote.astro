@@ -1,0 +1,11 @@
+---
+const {
+  label = "Source boundary",
+  text = "Source text, translation, summary, analysis, hypothesis, and OON interpretation are kept separate. Missing source details stay marked as pending review.",
+} = Astro.props;
+---
+
+<aside class="source-boundary-note">
+  <span>{label}</span>
+  <p>{text}</p>
+</aside>

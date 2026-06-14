@@ -1,0 +1,19 @@
+---
+import SourceStatusLabel from "./SourceStatusLabel.astro";
+
+const {
+  name = "Source path placeholder",
+  kind = "Source type pending review",
+  description = "Archive/source details will appear only after verification.",
+  status = "URL pending review",
+} = Astro.props;
+---
+
+<article class="archive-source-row">
+  <div>
+    <p class="row-meta">{kind}</p>
+    <h3>{name}</h3>
+    <p>{description}</p>
+  </div>
+  <SourceStatusLabel label={status} tone="review" />
+</article>

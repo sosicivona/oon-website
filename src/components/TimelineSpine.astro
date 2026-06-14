@@ -1,0 +1,11 @@
+---
+import TimelineEvent from "./TimelineEvent.astro";
+
+const {
+  events = [],
+} = Astro.props;
+---
+
+<ol class="timeline-spine">
+  {events.map((event) => <TimelineEvent event={event} />)}
+</ol>

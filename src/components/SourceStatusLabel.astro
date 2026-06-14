@@ -1,0 +1,10 @@
+---
+const {
+  label = "Pending review",
+  tone = "neutral",
+} = Astro.props;
+---
+
+<span class:list={["source-status-label", `source-status-label-${tone}`]}>
+  {label}
+</span>

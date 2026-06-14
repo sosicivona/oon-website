@@ -1,14 +1,14 @@
 ---
 const {
-  label = "Recognized source account",
+  label = "Source boundary",
   explanation,
 } = Astro.props;
 
 const defaultExplanation =
-  "Recognized by source researchers as part of the later UMMO/OOMO communication chain; this does not ask the reader to accept the origin claim.";
+  "Source text, translation, summary, analysis, hypothesis, and OON interpretation are kept separate. Missing source details stay marked as pending review.";
 ---
 
-<div class="source-badge">
+<div class="source-boundary-note">
   <span>{label}</span>
   <p>{explanation ?? defaultExplanation}</p>
 </div>

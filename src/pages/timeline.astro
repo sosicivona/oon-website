@@ -1,53 +1,30 @@
 ---
+import BoundaryCallout from "../components/BoundaryCallout.astro";
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import TimelineSpine from "../components/TimelineSpine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const phases = [
+const events = [
   {
-    label: "Communication received",
-    title: "Early correspondence and calls",
-    text: "Early material is approached as communications and related records requiring source-path and chronology review.",
+    type: "Orientation point",
+    date: "Date pending review",
+    title: "Placeholder chronology entry",
+    text: "A future event summary will appear only after source and date review.",
+    status: "Chronology pending review",
   },
   {
-    label: "Researcher / archive event",
-    title: "Receiver networks and circulation",
-    text: "The dossier moves through receivers, researchers, copies, classifications, and archive work.",
+    type: "Source review point",
+    date: "Date pending review",
+    title: "Placeholder source-path checkpoint",
+    text: "Source references, archive paths, and classification notes remain separated from interpretation.",
+    status: "Source path pending review",
   },
   {
-    label: "Researcher / archive event",
-    title: "Archive growth",
-    text: "Archive and research communities preserve, compare, translate, and organize the expanding material.",
-  },
-  {
-    label: "Public / media event",
-    title: "Peña authorship crisis",
-    text: "José Luis Jordán Peña's authorship claim becomes a central explanation to treat seriously within the wider dossier history.",
-  },
-  {
-    label: "Researcher / archive event",
-    title: "Research and classification period",
-    text: "Researchers continue classification, comparison, source tracking, translation, and interpretation work.",
-  },
-  {
-    label: "Source-continuity event",
-    title: "NR, GR1, and later communications",
-    text: "Later communication-chain material is handled with cautious labels and source-continuity notes.",
-  },
-  {
-    label: "Source-continuity event",
-    title: "Twitter and source-account period",
-    text: "Later public-account material requires explicit source-status language and careful separation from assessment.",
-  },
-  {
-    label: "OON / public orientation event",
-    title: "OON public orientation",
-    text: "OON provides a reading interface, public orientation, and pathways back to archives and source chains.",
-  },
-  {
-    label: "Public / media event",
-    title: "Current disclosure-context relevance",
-    text: "The dossier may be read in relation to wider public conversations, without making disclosure the homepage thesis.",
+    type: "Translation review point",
+    date: "Date pending review",
+    title: "Placeholder language-layer checkpoint",
+    text: "Original language, translation availability, and public translation labels should be visible when reviewed.",
+    status: "Translation status pending review",
   },
 ];
 ---
@@ -58,14 +35,14 @@ const phases = [
 >
   <Section
     eyebrow="Timeline"
-    title="The chronological skeleton."
-    lede="Timeline gives readers the arc before they enter details. It does not resolve authorship, origin, interpretation, or source-continuity questions."
+    title="Chronology without false certainty."
+    lede="Timeline will show reviewed events and source-path checkpoints. Until then, uncertainty is part of the interface."
     variant="page-hero"
   >
-    <div class="card-grid">
-      {phases.map((phase) => (
-        <ThemeCard title={phase.title} text={phase.text} meta={phase.label} />
-      ))}
-    </div>
+    <TimelineSpine events={events} />
+    <BoundaryCallout
+      label="Timeline safety"
+      text="Exact dates, event ordering, relationship claims, and source summaries must come from reviewed records, not visual placeholders."
+    />
   </Section>
 </BaseLayout>

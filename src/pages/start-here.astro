@@ -1,12 +1,50 @@
 ---
+import DefinitionList from "../components/DefinitionList.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+import InfoPanel from "../components/InfoPanel.astro";
+import NavTile from "../components/NavTile.astro";
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import SourceBoundaryNote from "../components/SourceBoundaryNote.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const basePath = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
+
+const definitions = [
+  {
+    term: "Source text",
+    description: "The source layer itself. This stays separate from translation, summary, analysis, and OON interpretation.",
+  },
+  {
+    term: "Translation",
+    description: "A language layer with its own status. Translation is never treated as original source text.",
+  },
+  {
+    term: "Summary",
+    description: "A short orientation layer, added only after source review.",
+  },
+  {
+    term: "OON interpretation",
+    description: "A clearly labeled reading by OON, kept separate from source material.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do I need to begin with a conclusion?",
+    answer: "No. The site is structured so a reader can orient, compare source paths, and leave questions open.",
+  },
+  {
+    question: "Why are placeholders visible?",
+    answer: "They mark where the content model will connect after source review. Missing source details are not filled in by guesswork.",
+  },
+  {
+    question: "What should I check first?",
+    answer: "Start with the layer you are reading: source text, translation, summary, analysis, hypothesis, or OON interpretation.",
+  },
+];
 ---
 
 <BaseLayout
@@ -16,63 +54,35 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Start"
     title="Begin with the shape of the dossier."
-    lede="The UMMO dossier is the wider historical phenomenon. The corpus is the body of letters, communications, reports, notes, and source texts inside it. OON is an interface and network layer, not the source and not the archive."
+    lede="This page orients the reader before source records appear. It explains the reading layers, the route choices, and what the site does not claim."
     variant="page-hero"
   >
-    <div class="card-grid">
-      <ThemeCard
-        title="What is this?"
-        text="A long-running documentary and communication dossier made of source material, archive records, translations, analysis, and unresolved questions."
-      />
-      <ThemeCard
-        title="Why is it still studied?"
-        text="Researchers continue to compare the scale, structure, source paths, technical range, later communications, and competing interpretations."
-        href={link("start-here/#faq")}
-      />
-      <ThemeCard
-        title="What does OON do?"
-        text="OON organizes reading paths, source-status language, public orientation, and context while pointing readers back to the archives."
-        href={link("about/")}
-      />
-      <ThemeCard
-        title="How can I begin?"
-        text="Begin with one communication, one topic, one period, or one source path. The reader does not need to start with everything."
-        href={link("read/")}
-      />
-      <ThemeCard
-        title="What this site does — and does not do"
-        text="This site does not replace archives, settle authorship, or claim origin."
-        href={link("start-here/#faq")}
-      />
-    </div>
+    <SourceBoundaryNote />
+    <DefinitionList items={definitions} />
   </Section>
 
   <Section
     eyebrow="Entry paths"
-    title="Choose the question you are actually asking."
+    title="Choose the task in front of you."
   >
     <div class="card-grid compact">
-      <ThemeCard title="Understand the arc" text="Use Timeline to see high-level phases before reading details." href={link("timeline/")} />
-      <ThemeCard title="Enter the material" text="Use Read to browse by topic, period, type, or source path." href={link("read/")} />
-      <ThemeCard title="Trace sources" text="Use Sources to return to archive paths, public channels, and source-status notes." href={link("sources/")} />
+      <NavTile title="Enter the material" text="Use Read to see the metadata-first row structure." href={link("read/")} />
+      <NavTile title="Understand the arc" text="Use Timeline for a cautious chronology scaffold." href={link("timeline/")} />
+      <NavTile title="Trace sources" text="Use Sources to see the source-layer model." href={link("sources/")} />
+    </div>
+    <div class="card-grid compact supporting-grid">
+      <InfoPanel title="No belief request" text="The interface should help readers inspect material without asking them to accept a verdict." />
+      <InfoPanel title="No invented gaps" text="Unknown dates, links, translations, and statuses remain marked as pending review." />
+      <InfoPanel title="Clear layers" text="Source text, translation, summary, analysis, hypothesis, and OON interpretation stay visually separate." />
     </div>
   </Section>
 
   <Section
     id="faq"
-    eyebrow="FAQ preview"
-    title="High-friction questions belong in context."
+    eyebrow="FAQ"
+    title="Questions stay attached to their boundaries."
     variant="soft-panel"
   >
-    <div class="two-column">
-      <ThemeCard
-        title="Why is the dossier still studied after José Luis Jordán Peña's authorship claim?"
-        text="That authorship claim is a central explanation and must be treated seriously. It is not the whole history of the dossier. Archive and research communities continued to preserve, classify, and compare the material because of its scale, internal structure, technical range, later communications, and unresolved source-continuity questions."
-      />
-      <ThemeCard
-        title="How should a newcomer read?"
-        text="Begin with source paths, chronology, communication type, translation status, and interpretation boundaries before forming a view."
-      />
-    </div>
+    <FAQAccordion items={faqs} />
   </Section>
 </BaseLayout>

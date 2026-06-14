@@ -1,0 +1,11 @@
+---
+const {
+  label = "Interpretation boundary",
+  text = "This area is reserved for context. It should not be read as source text, translation, or a claim until reviewed.",
+} = Astro.props;
+---
+
+<aside class="boundary-callout">
+  <p class="panel-kicker">{label}</p>
+  <p>{text}</p>
+</aside>

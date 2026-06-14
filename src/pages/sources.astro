@@ -1,13 +1,39 @@
 ---
+import ArchiveSourceRow from "../components/ArchiveSourceRow.astro";
+import BoundaryCallout from "../components/BoundaryCallout.astro";
 import Section from "../components/Section.astro";
-import SourceBadge from "../components/SourceBadge.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import SourceLayerPanel from "../components/SourceLayerPanel.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const basePath = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
+
+const sourceLayers = [
+  { term: "Archive/source path", description: "External locations stay pending until the URL and source relationship are verified." },
+  { term: "Source-site classification", description: "Inherited classifications are preserved separately from OON review status." },
+  { term: "Translation status", description: "Translation labels describe the language layer, not the origin of the material." },
+  { term: "OON assessment", description: "OON review status is not proof language and should not dominate public source rows." },
+];
+
+const sourceRows = [
+  {
+    name: "Verified source path placeholder",
+    kind: "Archive/source name pending review",
+    description: "A reviewed source row will show where a reader can verify the material without implying OON owns the source.",
+  },
+  {
+    name: "Translation source placeholder",
+    kind: "Translation layer pending review",
+    description: "Translation references need their own status and basis before appearing as public source paths.",
+  },
+  {
+    name: "Facsimile or scan placeholder",
+    kind: "Format availability pending review",
+    description: "Scan and facsimile actions remain hidden until the source format is verified.",
+  },
+];
 ---
 
 <BaseLayout
@@ -17,40 +43,25 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Sources / Archives"
     title="Where the reading points back."
-    lede="The archive sites remain the canonical repositories. This website is an interface for entering the dossier, following source paths, and returning to the archives."
+    lede="Sources will list reviewed paths back to external material. This visual pass uses generic placeholders only."
     variant="page-hero"
   >
-    <div class="card-grid">
-      <ThemeCard
-        title="UMMO-Ciencias"
-        text="Primary archive reference for the Spanish-language corpus and related materials."
-        meta="Primary archive"
-      />
-      <ThemeCard
-        title="Ummo-Sciences FR"
-        text="French-language archive and long-running research resource."
-        meta="French archive"
-      />
-      <ThemeCard
-        title="Ummo-Sciences EN"
-        text="English access point for selected materials."
-        meta="English access"
-      />
-      <ThemeCard
-        title="UmmoWiki"
-        text="Community reference index and cross-reference resource."
-        meta="Reference wiki"
-      />
+    <div class="source-list-rows">
+      {sourceRows.map((row) => <ArchiveSourceRow {...row} />)}
     </div>
   </Section>
 
   <Section
-    eyebrow="Source-status language"
-    title="Archive access is not the same as assessment."
-    lede="Source-status notes help separate archive location, communication-chain status, translation status, and interpretation."
+    eyebrow="Source layers"
+    title="A source path is not an assessment."
+    lede="Each row should eventually make the archive path, inherited classification, translation status, and OON review state legible as separate layers."
     variant="soft-panel"
   >
-    <SourceBadge />
+    <SourceLayerPanel layers={sourceLayers} />
+    <BoundaryCallout
+      label="Publishing gate"
+      text="No real external archive/source link should appear until the spreadsheet status fields and source review say it is ready."
+    />
     <a class="text-link" href={link("source-continuity/")}>Source Continuity</a>
   </Section>
 </BaseLayout>

@@ -1,0 +1,14 @@
+---
+const {
+  items = [],
+} = Astro.props;
+---
+
+<dl class="definition-list">
+  {items.map((item) => (
+    <div>
+      <dt>{item.term}</dt>
+      <dd>{item.description}</dd>
+    </div>
+  ))}
+</dl>

@@ -1,6 +1,6 @@
 ---
+import InfoPanel from "../components/InfoPanel.astro";
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -15,8 +15,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     variant="page-hero"
   >
     <div class="two-column">
-      <ThemeCard title="OON YouTube" text="Public episodes and visual explainers." />
-      <ThemeCard title="OON on X" text="Public updates, posts, and discussion threads." />
+      <InfoPanel title="Public video placeholder" text="Public channel details will appear only after link and copy review." />
+      <InfoPanel title="Public update placeholder" text="External channel links remain pending until verified." />
     </div>
   </Section>
 </BaseLayout>

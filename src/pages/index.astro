@@ -1,6 +1,8 @@
 ---
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import BoundaryCallout from "../components/BoundaryCallout.astro";
+import NavTile from "../components/NavTile.astro";
+import SourceBoundaryNote from "../components/SourceBoundaryNote.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const basePath = import.meta.env.BASE_URL.endsWith("/")
@@ -17,20 +19,20 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
   <section class="hero-beta" aria-labelledby="page-title">
     <div
       class="hero-beta-image"
-      style={`background-image: linear-gradient(90deg, rgba(250, 247, 239, 0.96), rgba(250, 247, 239, 0.78) 46%, rgba(250, 247, 239, 0.2)), url("${bannerImage}")`}
+      style={`background-image: linear-gradient(90deg, rgba(243, 240, 233, 0.9), rgba(243, 240, 233, 0.7) 48%, rgba(243, 240, 233, 0.28)), url("${bannerImage}")`}
       aria-hidden="true"
     ></div>
     <div class="hero-beta-content">
-      <p class="eyebrow">The UMMO dossier</p>
-      <h1 id="page-title">
-        For sixty years, a stream of letters, reports, and recorded contact has been
-        preserved, studied, and debated.
-      </h1>
+      <p class="eyebrow">Oyagaa-Oomo Network</p>
+      <h1 id="page-title">A calm reading interface for the UMMO dossier.</h1>
       <p class="hero-quote">
-        This site helps readers enter the material, follow its threads, and trace it back
-        to the archives.
+        Start with orientation, move into source-linked metadata, and keep every layer
+        of reading separate from interpretation.
       </p>
-      <a class="button button-primary" href={link("start-here/")}>Start here</a>
+      <div class="hero-actions">
+        <a class="button button-primary" href={link("start-here/")}>Start here</a>
+        <a class="button button-secondary" href={link("read/")}>Read</a>
+      </div>
     </div>
   </section>
 
@@ -38,25 +40,39 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     id="begin"
     eyebrow="Continue"
     title="Choose a path."
+    lede="The launch navigation stays small: orient first, enter the material, follow chronology, then verify source paths."
   >
     <div class="card-grid compact">
-      <ThemeCard
+      <NavTile
+        title="Start"
+        text="Get the shape of the project before entering source records."
+        href={link("start-here/")}
+        meta="Orient"
+      />
+      <NavTile
         title="Read"
-        text="Enter through one communication, one topic, one period, or one source path."
+        text="Browse placeholder communication rows and source-layer structure."
         href={link("read/")}
         meta="Source material"
       />
-      <ThemeCard
+      <NavTile
         title="Timeline"
-        text="See the high-level arc before entering document-level detail."
+        text="See a cautious chronology structure with uncertainty visible."
         href={link("timeline/")}
         meta="Chronology"
       />
-      <ThemeCard
+      <NavTile
         title="Sources"
-        text="Return to archive paths, public channels, and source-status notes."
+        text="Understand how source paths will be shown after review."
         href={link("sources/")}
         meta="Verification"
+      />
+    </div>
+    <div class="stacked-notes">
+      <SourceBoundaryNote />
+      <BoundaryCallout
+        label="Content safety"
+        text="This visual pass does not add real corpus content, quotes, dates, document IDs, or external archive links."
       />
     </div>
   </Section>

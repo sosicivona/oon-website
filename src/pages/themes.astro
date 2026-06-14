@@ -1,6 +1,6 @@
 ---
+import InfoPanel from "../components/InfoPanel.astro";
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -15,12 +15,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     variant="page-hero"
   >
     <div class="card-grid">
-      <ThemeCard title="Identity and appearance" text="Provisional pathway for source-linked material." />
-      <ThemeCard title="Culture and social structure" text="Provisional pathway for related communications and descriptions." />
-      <ThemeCard title="Humanity and Earth" text="Provisional pathway for material concerning human life and Earth." />
-      <ThemeCard title="Science and technology" text="Provisional pathway for technical material held for source review and comparison." />
-      <ThemeCard title="Philosophy and social organization" text="Provisional pathway for ideas read in context before analysis." />
-      <ThemeCard title="Other civilizations" text="Provisional pathway for claims and descriptions kept separate from assessment." />
+      <InfoPanel title="Placeholder topic pathway" text="Topic relationships will appear only after source review." />
+      <InfoPanel title="Placeholder period pathway" text="Chronology will stay cautious when source dates are uncertain." />
+      <InfoPanel title="Placeholder type pathway" text="Material type labels remain separate from source-status labels." />
     </div>
   </Section>
 </BaseLayout>

@@ -1,7 +1,7 @@
 ---
+import InfoPanel from "../components/InfoPanel.astro";
 import Section from "../components/Section.astro";
-import SourceBadge from "../components/SourceBadge.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import SourceBoundaryNote from "../components/SourceBoundaryNote.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const basePath = import.meta.env.BASE_URL.endsWith("/")
@@ -17,15 +17,15 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Source Continuity"
     title="Make the source chain visible."
-    lede="Some later communications or accounts may be treated by source researchers as source-chain relevant. This does not establish origin; it names how the material is recognized, located, translated, and separated from analysis."
+    lede="Source continuity names how material is located, translated, classified, and separated from analysis. It does not establish origin."
     variant="page-hero"
   >
-    <SourceBadge />
+    <SourceBoundaryNote />
     <div class="card-grid">
-      <ThemeCard title="Recognized source account" text="A source-status label for material recognized by source researchers as part of a later communication chain." />
-      <ThemeCard title="Archive record" text="Where the item can be located or checked." />
-      <ThemeCard title="Translation status" text="What language layer the reader is seeing." />
-      <ThemeCard title="Analysis boundary" text="Where OON commentary begins." />
+      <InfoPanel title="Source path" text="Where an item can be located or checked after review." />
+      <InfoPanel title="Source-site classification" text="Inherited classifications stay separate from OON review status." />
+      <InfoPanel title="Translation status" text="What language layer the reader is seeing." />
+      <InfoPanel title="Analysis boundary" text="Where OON commentary begins." />
     </div>
     <a class="text-link" href={link("sources/")}>View sources</a>
   </Section>

@@ -1,0 +1,20 @@
+---
+import SourceStatusLabel from "./SourceStatusLabel.astro";
+
+const {
+  event,
+} = Astro.props;
+---
+
+<li class="timeline-event">
+  <div class="timeline-marker" aria-hidden="true"></div>
+  <article>
+    <div class="timeline-event-topline">
+      <span>{event.type}</span>
+      <span>{event.date}</span>
+    </div>
+    <h3>{event.title}</h3>
+    <p>{event.text}</p>
+    {event.status && <SourceStatusLabel label={event.status} tone="review" />}
+  </article>
+</li>

@@ -1,0 +1,8 @@
+---
+const {
+  label,
+  selected = false,
+} = Astro.props;
+---
+
+<span class:list={["type-chip", selected && "type-chip-selected"]}>{label}</span>

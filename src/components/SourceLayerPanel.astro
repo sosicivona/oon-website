@@ -1,0 +1,18 @@
+---
+const {
+  title = "Source layers",
+  layers = [],
+} = Astro.props;
+---
+
+<aside class="source-layer-panel">
+  <p class="panel-kicker">{title}</p>
+  <dl>
+    {layers.map((layer) => (
+      <div>
+        <dt>{layer.term}</dt>
+        <dd>{layer.description}</dd>
+      </div>
+    ))}
+  </dl>
+</aside>

@@ -1,13 +1,42 @@
 ---
+import BoundaryCallout from "../components/BoundaryCallout.astro";
+import CommunicationItemRow from "../components/CommunicationItemRow.astro";
+import InfoPanel from "../components/InfoPanel.astro";
 import Section from "../components/Section.astro";
-import SourceBadge from "../components/SourceBadge.astro";
-import ThemeCard from "../components/ThemeCard.astro";
+import SourceLayerPanel from "../components/SourceLayerPanel.astro";
+import SourceStatusLabel from "../components/SourceStatusLabel.astro";
+import TypeChip from "../components/TypeChip.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const basePath = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const link = (path) => `${basePath}${path}`;
+
+const sourceLayers = [
+  { term: "Source reference", description: "Canonical reference and source path remain pending until verified." },
+  { term: "Language layer", description: "Original language and translation availability are shown separately." },
+  { term: "Reader status", description: "Onsite reading actions stay hidden until publishing and rights checks pass." },
+  { term: "Interpretation", description: "OON interpretation does not appear inside source metadata." },
+];
+
+const rows = [
+  {
+    title: "Placeholder communication item",
+    reference: "Canonical reference pending review",
+    category: "Communication item",
+  },
+  {
+    title: "Placeholder source record",
+    reference: "Source-linked metadata pending review",
+    category: "Source record",
+  },
+  {
+    title: "Placeholder translation candidate",
+    reference: "Translation basis pending review",
+    category: "Translation layer",
+  },
+];
 ---
 
 <BaseLayout
@@ -17,41 +46,47 @@ const link = (path) => `${basePath}${path}`;
   <Section
     eyebrow="Read"
     title="Enter the source material."
-    lede="The archive record is large. The reader can enter through one communication, one topic, one period, or one source path while source status stays visible."
+    lede="Read will become the main entry point into source-linked records. For now it shows the safe row structure and the metadata gates that must be satisfied before publication."
     variant="page-hero"
   >
-    <SourceBadge />
+    <SourceLayerPanel title="Reader page layers" layers={sourceLayers} />
     <a class="text-link" href={link("source-continuity/")}>Read the source-continuity note</a>
   </Section>
 
   <Section
-    eyebrow="Browse modes"
-    title="Start small, then widen."
-    lede="Read is the main entry point into the corpus and related source material. Topics are a browse mode here, not a top-level launch destination."
+    eyebrow="Reading paths"
+    title="Start with metadata, not claims."
+    lede="These path cards describe future browse modes. They do not load real corpus entries yet."
   >
-    <div class="card-grid">
-      <ThemeCard title="By topic" text="A provisional topic mode for following repeated subjects across source material." />
-      <ThemeCard title="By period" text="A chronological entry for reading phases of the dossier in context." />
-      <ThemeCard title="By type" text="A way to separate letters, reports, calls, later communications, archive notes, and OON commentary." />
-      <ThemeCard title="Source path" text="A verification-first route from local reading copy back to archive/source location." href={link("sources/")} />
+    <div class="card-grid compact">
+      <InfoPanel title="By topic" text="Topic tags will appear only after reviewed relationships exist." />
+      <InfoPanel title="By period" text="Chronology stays cautious when dates are uncertain or pending." />
+      <InfoPanel title="By type" text="Material type is a neutral label, separate from source status." />
+    </div>
+    <div class="chip-row" aria-label="Placeholder type chips">
+      <TypeChip label="Communication item" />
+      <TypeChip label="Source record" />
+      <TypeChip label="Translation layer" />
     </div>
   </Section>
 
   <Section
-    eyebrow="Corpus types"
-    title="Different materials need visible labels."
-    lede="The reader should always know what kind of material they are reading and where interpretation begins."
+    eyebrow="Metadata rows"
+    title="Item rows stay factual and restrained."
+    lede="Rows show placeholders for title, reference, type, translation status, and review state. Source excerpts and full reader actions are intentionally absent."
     variant="soft-panel"
   >
-    <div class="card-grid compact">
-      <ThemeCard title="Letters" text="Historical correspondence and related source records." />
-      <ThemeCard title="Reports" text="Structured source material or records that need source-location and status notes." />
-      <ThemeCard title="Phone calls" text="Call-related material treated with chronology and source-path visibility." />
-      <ThemeCard title="NR communications" text="Later communication-chain material, labeled cautiously and separately." />
-      <ThemeCard title="GR1 communications" text="Later communication-chain material, labeled cautiously and separately." />
-      <ThemeCard title="Later accounts / tweets" text="Later public-account material requiring source-continuity notes." />
-      <ThemeCard title="Archive notes" text="References, source locations, language status, and contextual notes." />
-      <ThemeCard title="OON commentary" text="Analysis and interpretation labeled separately from source material." />
+    <div class="read-toolbar" aria-label="Read status summary">
+      <SourceStatusLabel label="Source-linked metadata pending review" tone="review" />
+      <SourceStatusLabel label="Translation status pending review" />
+      <SourceStatusLabel label="No source excerpts loaded" />
     </div>
+    <div class="communication-list">
+      {rows.map((row) => <CommunicationItemRow {...row} />)}
+    </div>
+    <BoundaryCallout
+      label="Empty-state rule"
+      text="If a row lacks verified source path, translation state, or publication status, it remains a metadata placeholder rather than a reader page."
+    />
   </Section>
 </BaseLayout>
