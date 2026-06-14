@@ -9,7 +9,7 @@ const {
 const Element = href ? "a" : "article";
 ---
 
-<Element class="theme-card" href={href}>
+<Element class:list={["theme-card", href ? "theme-card-link" : "theme-card-static"]} href={href}>
   {meta && <p class="card-meta">{meta}</p>}
   <h3>{title}</h3>
   <p>{text}</p>

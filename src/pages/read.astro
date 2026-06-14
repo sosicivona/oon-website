@@ -21,21 +21,6 @@ const link = (path) => `${basePath}${path}`;
     variant="page-hero"
   >
     <SourceBadge />
-    <div class="reader-preview">
-      <div>
-        <p class="eyebrow">Reader page anatomy</p>
-        <h3>Every future reader page should keep source location, chronology, language, status labels, archive links, context, and OON commentary distinct.</h3>
-      </div>
-      <ol class="reader-steps">
-        <li>Source location</li>
-        <li>Date / chronology status</li>
-        <li>Language / translation status</li>
-        <li>Status labels</li>
-        <li>Archive links</li>
-        <li>Context note</li>
-        <li>Analysis boundary</li>
-      </ol>
-    </div>
     <a class="text-link" href={link("source-continuity/")}>Read the source-continuity note</a>
   </Section>
 
@@ -45,12 +30,10 @@ const link = (path) => `${basePath}${path}`;
     lede="Read is the main entry point into the corpus and related source material. Topics are a browse mode here, not a top-level launch destination."
   >
     <div class="card-grid">
-      <ThemeCard title="By topic" text="A provisional topic mode for following repeated subjects across source material." href={link("themes/")} />
-      <ThemeCard title="By period" text="A chronological entry for reading phases of the dossier in context." href={link("timeline/")} />
+      <ThemeCard title="By topic" text="A provisional topic mode for following repeated subjects across source material." />
+      <ThemeCard title="By period" text="A chronological entry for reading phases of the dossier in context." />
       <ThemeCard title="By type" text="A way to separate letters, reports, calls, later communications, archive notes, and OON commentary." />
-      <ThemeCard title="Essential documents" text="A future curated path for key documents, introduced only after source status is ready." />
       <ThemeCard title="Source path" text="A verification-first route from local reading copy back to archive/source location." href={link("sources/")} />
-      <ThemeCard title="Search later" text="A future search mode for locating material without turning the launch site into an archive dump." />
     </div>
   </Section>
 

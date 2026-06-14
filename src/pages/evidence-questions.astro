@@ -1,6 +1,5 @@
 ---
 import Section from "../components/Section.astro";
-import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -14,50 +13,5 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     lede="Questions & Cases is where material can be examined without turning items into conclusions."
     variant="page-hero"
   >
-    <div class="status-grid">
-      <article>
-        <span>Item</span>
-        <h3>Source object</h3>
-        <p>The text, scan, record, or archive item being examined.</p>
-      </article>
-      <article>
-        <span>Claim</span>
-        <h3>Statement to examine</h3>
-        <p>What the corpus describes, separated from interpretation.</p>
-      </article>
-      <article>
-        <span>Source status</span>
-        <h3>Location and language</h3>
-        <p>Archive location, source chain, and translation status remain visible.</p>
-      </article>
-      <article>
-        <span>Chronology status</span>
-        <h3>Time and sequence</h3>
-        <p>Dates, order, and later comparisons are handled cautiously.</p>
-      </article>
-      <article>
-        <span>Counter-reading</span>
-        <h3>Alternative explanations</h3>
-        <p>Objections and competing readings stay part of the case review.</p>
-      </article>
-      <article>
-        <span>Assessment status</span>
-        <h3>Open review</h3>
-        <p>Assessment language stays distinct from source material.</p>
-      </article>
-    </div>
-  </Section>
-
-  <Section
-    eyebrow="Future backlog"
-    title="Categories for later review."
-    lede="These categories stay out of the homepage while source chains and assessment boundaries are prepared."
-  >
-    <div class="card-grid compact">
-      <ThemeCard title="Public health claims" text="Category reserved for source-chain review." />
-      <ThemeCard title="Geopolitical claims" text="Category reserved for source-chain review." />
-      <ThemeCard title="Forecast claims" text="Category reserved for source-chain review." />
-      <ThemeCard title="Economic claims" text="Category reserved for source-chain review." />
-    </div>
   </Section>
 </BaseLayout>

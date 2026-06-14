@@ -10,15 +10,20 @@ const link = (path) => `${basePath}${path}`;
     <p class="footer-title">Oyagaa-Oomo Network</p>
     <p>A reading-first interface for entering the UMMO/OOMO dossier and returning to source paths.</p>
   </div>
-  <nav aria-label="Footer navigation">
-    <a href={link("about/")}>About OON</a>
-    <a href={link("start-here/#faq")}>FAQ</a>
-    <a href={link("source-continuity/")}>Source Continuity</a>
-    <a href={link("watch/")}>Watch / Public Channels</a>
-    <a href={link("evidence-questions/")}>Questions & Cases</a>
-    <a href={link("themes/")}>Topics</a>
-    <a href={link("timeline/")}>Timeline</a>
-    <a href={link("read/")}>Read</a>
-    <a href={link("sources/")}>Sources</a>
-  </nav>
+  <div class="footer-link-groups">
+    <nav aria-label="Primary footer navigation">
+      <p class="footer-nav-title">Primary</p>
+      <a href={link("start-here/")}>Start</a>
+      <a href={link("read/")}>Read</a>
+      <a href={link("timeline/")}>Timeline</a>
+      <a href={link("sources/")}>Sources</a>
+    </nav>
+    <nav aria-label="Support footer navigation">
+      <p class="footer-nav-title">Support</p>
+      <a href={link("about/")}>About OON</a>
+      <a href={link("start-here/#faq")}>FAQ</a>
+      <a href={link("source-continuity/")}>Source Continuity</a>
+      <a href={link("watch/")}>Watch / Public Channels</a>
+    </nav>
+  </div>
 </footer>

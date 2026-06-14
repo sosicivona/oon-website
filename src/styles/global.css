@@ -104,6 +104,13 @@ main {
   position: sticky;
   top: 0;
   z-index: 20;
+  width: 100%;
+  border-bottom: 1px solid rgba(23, 26, 28, 0.14);
+  background: rgba(246, 241, 232, 0.86);
+  backdrop-filter: blur(16px);
+}
+
+.site-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,9 +118,6 @@ main {
   width: min(calc(100% - 2rem), 74rem);
   margin: 0 auto;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(23, 26, 28, 0.14);
-  background: rgba(246, 241, 232, 0.86);
-  backdrop-filter: blur(16px);
 }
 
 .brand {
@@ -162,6 +166,12 @@ main {
   width: min(calc(100% - 2rem), 74rem);
   margin: 0 auto;
   padding: 8rem 0 5rem;
+}
+
+.hero-beta h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  line-height: 0.98;
 }
 
 .hero-quote {
@@ -264,6 +274,24 @@ main {
   background: var(--panel);
 }
 
+.theme-card-link {
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-card-link::after {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  color: var(--teal);
+  content: "→";
+  font-weight: 850;
+}
+
+.theme-card-static {
+  cursor: default;
+}
+
 .theme-card h3,
 .status-grid h3,
 .reader-preview h3 {
@@ -275,7 +303,7 @@ main {
   margin-bottom: 0;
 }
 
-.theme-card[href]:hover {
+.theme-card-link:hover {
   border-color: var(--teal);
   background: var(--paper-soft);
 }
@@ -375,6 +403,25 @@ main {
   gap: 0.8rem 1rem;
 }
 
+.footer-link-groups {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.footer-link-groups nav {
+  align-content: start;
+}
+
+.footer-nav-title {
+  width: 100%;
+  margin: 0 0 0.2rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .site-footer a {
   color: var(--muted);
   font-size: 0.92rem;
@@ -412,6 +459,10 @@ main {
   .site-footer {
     grid-template-columns: minmax(0, 1fr) auto;
   }
+
+  .footer-link-groups {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
 }
 
 @media (min-width: 68rem) {
@@ -421,7 +472,7 @@ main {
 }
 
 @media (max-width: 44rem) {
-  .site-header {
+  .site-header-inner {
     align-items: flex-start;
     flex-direction: column;
   }
@@ -432,6 +483,10 @@ main {
 
   .hero-beta-content {
     padding-top: 5.5rem;
+  }
+
+  .hero-beta h1 {
+    font-size: clamp(2.75rem, 14vw, 4.1rem);
   }
 
   .section-inner {
