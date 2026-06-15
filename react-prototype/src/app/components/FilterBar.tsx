@@ -14,7 +14,7 @@ interface FilterBarProps {
   resultCount: number;
 }
 
-const ALL_TYPES = ["Letter", "Report", "Transcript", "Internal note", "Online account", "Commentary"];
+const ALL_TYPES = ["Communication item", "Source path", "Context note", "Archive reference"];
 
 /** Sticky filter bar for the Browse page: mode segmented control (topic/period/type), collapsible type-chip filter panel, sort dropdown, and result count. */
 export function FilterBar({

@@ -1,36 +1,13 @@
 import { useState } from "react";
 import { Search, X } from "lucide-react";
-import { ItemRow } from "./ItemRow";
-
-interface SearchResult {
-  id: string;
-  title: string;
-  date: string;
-  type: string;
-  status: "verified" | "under-review" | "unverified" | "translated" | "original" | "partial";
-}
 
 interface SearchBarProps {
-  results?: SearchResult[];
   onSelectResult?: (id: string) => void;
 }
 
-const MOCK_RESULTS: SearchResult[] = [
-  { id: "1", title: "Letter from Oomo leadership, March 1987", date: "Mar 1987", type: "Letter", status: "verified" },
-  { id: "2", title: "Internal report on network structure", date: "Jun 1989", type: "Report", status: "under-review" },
-  { id: "3", title: "Transcript: public address, Auckland", date: "Nov 1991", type: "Transcript", status: "original" },
-];
-
-export function SearchBar({ onSelectResult }: SearchBarProps) {
+export function SearchBar({ onSelectResult: _onSelectResult }: SearchBarProps) {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
-
-  const filtered = query.length > 1
-    ? MOCK_RESULTS.filter((r) =>
-        r.title.toLowerCase().includes(query.toLowerCase()) ||
-        r.type.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
 
   const showResults = focused && query.length > 1;
 
@@ -52,7 +29,7 @@ export function SearchBar({ onSelectResult }: SearchBarProps) {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
-          placeholder="Search documents, dates, people…"
+          placeholder="Search reviewed records..."
           style={{
             flex: 1,
             background: "transparent",
@@ -80,40 +57,14 @@ export function SearchBar({ onSelectResult }: SearchBarProps) {
             boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
           }}
         >
-          {filtered.length > 0 ? (
-            <>
-              <div
-                className="px-4 py-2 border-b"
-                style={{ borderColor: "var(--border)" }}
-              >
-                <span style={{ fontSize: "0.6875rem", color: "var(--muted-foreground)" }}>
-                  {filtered.length} result{filtered.length !== 1 ? "s" : ""} for "{query}"
-                </span>
-              </div>
-              <div className="px-4">
-                {filtered.map((r) => (
-                  <ItemRow
-                    key={r.id}
-                    title={r.title}
-                    date={r.date}
-                    type={r.type}
-                    status={r.status}
-                    dense
-                    onClick={() => onSelectResult?.(r.id)}
-                  />
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className="px-4 py-6 text-center">
-              <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>
-                No results found for "{query}"
-              </p>
-              <p className="mt-1" style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
-                Try a different term, date, or document type
-              </p>
-            </div>
-          )}
+          <div className="px-4 py-6 text-center">
+            <p style={{ fontSize: "0.875rem", color: "var(--muted-foreground)" }}>
+              Search will become available as reviewed records are added.
+            </p>
+            <p className="mt-1" style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
+              Query held: "{query}"
+            </p>
+          </div>
         </div>
       )}
     </div>

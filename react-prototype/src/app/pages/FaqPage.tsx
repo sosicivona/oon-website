@@ -16,16 +16,16 @@ const FAQ_SECTIONS = [
     heading: "Authorship and origin",
     items: [
       {
-        question: "Wasn't this resolved by José Luis Jordán Peña?",
-        answer: "The Peña authorship claim is one of the most significant events in the history of the dossier. OON treats it as a primary counterpoint that deserves careful source review and documentation, not dismissal. The site separates source material, authorship claims, later commentary, and OON interpretation so readers can examine each layer. A dedicated item in the corpus index covers the Peña claim and its reception. How that claim should be weighed against the wider evidentiary record is a question OON does not answer for you.",
+        question: "How will authorship questions be handled?",
+        answer: "Authorship questions will be handled only with approved copy and source paths. This prototype does not publish claims, counterclaims, or conclusions.",
       },
       {
         question: "Is OON claiming the correspondence is authentic?",
-        answer: "No. OON does not make or imply authenticity claims. The status labels — Verified, Under Review, Unverified, Partial — describe provenance confirmation, not claims about origin. OON's role is to organize material and document provenance. Readers evaluate the material.",
+        answer: "No. OON is intended as a navigation and provenance layer. Status language will be finalized after source review.",
       },
       {
-        question: "Are later communications treated the same as early letters?",
-        answer: "No. The corpus has a layered structure: early letters (pre-1970s), later communications, post-1980s accounts, online-era material, and subsequent commentary. OON applies the same provenance methodology to all material, but the source-layer distinctions become more important as you move toward secondary and tertiary accounts. The Read section allows filtering by document type and period.",
+        question: "Are all materials treated the same way?",
+        answer: "No final classification is shown in this prototype. Future records should distinguish source material, translation, summary, analysis, hypothesis, and OON interpretation.",
       },
     ],
   },
@@ -34,15 +34,15 @@ const FAQ_SECTIONS = [
     items: [
       {
         question: "What is source text vs translation vs summary vs interpretation?",
-        answer: "Source text is the original document in its original language. Translation is a rendered version in another language, always attributed. Summary is a condensed description of the document's content, not a quotation. Analysis is scholarly or editorial commentary on the source. Hypothesis is an interpretive claim about origin, authorship, or meaning. OON interpretation is where OON editors have added contextual framing — always marked as such. These layers are visually distinct throughout the site.",
+        answer: "These are editorial layers that must remain visually distinct. Final definitions should come from the approved copy workflow.",
       },
       {
-        question: "Can I read or download the full corpus?",
-        answer: "The corpus is held in external archives and institutions. OON does not host original documents. For collections with public digital access, OON links directly. For restricted collections, OON notes the access requirement. Download options in individual item views cover OON-produced summaries and provenance data, not original documents.",
+        question: "Can I download source material?",
+        answer: "No download is available in this prototype. Download behavior is disabled pending source verification, rights review, and approved copy.",
       },
       {
-        question: "What are D, NR, GR1, W, H, E references?",
-        answer: "These are internal reference codes used in the historical correspondence record to designate letter categories, recipients, and series. They appear in provenance records sourced from institutional archives. OON preserves these codes as they appear in original or cited records. A reference guide is in progress and will appear in the Sources section.",
+        question: "How will reference codes be handled?",
+        answer: "Reference codes will be displayed only after they are sourced from the approved corpus inventory. Until then, item references remain pending.",
       },
     ],
   },
@@ -51,15 +51,15 @@ const FAQ_SECTIONS = [
     items: [
       {
         question: "What about scientific claims and predictions?",
-        answer: "Several letters make scientific or technical claims. OON documents these as features of the source text. OON does not validate or invalidate scientific claims — that is outside the scope of a documentary archive. Where published analyses of specific claims exist, OON references them as analysis-layer material, clearly attributed.",
+        answer: "Source claims will be documented as source material only after verification. OON interpretation must remain visually separate.",
       },
       {
-        question: "Are Ummites related to Nordics, Tall Whites, Greys, or other described beings?",
-        answer: "OON does not catalogue cross-references to typologies from other bodies of reported contact. The UMMO correspondence is treated on its own evidentiary terms. Comparative discussions exist in the analysis literature; OON may reference those as secondary material where they engage directly with the corpus.",
+        question: "Will OON compare the dossier to unrelated typologies?",
+        answer: "This prototype does not add comparative claims. Any future comparison would need explicit source and editorial review.",
       },
       {
         question: "Why did governments not publicly recognise this?",
-        answer: "OON does not document or speculate on government knowledge or response. The site is focused on the documentary record as it exists in archives and published research. Questions about government awareness belong to investigative journalism or political history, not to OON's scope.",
+        answer: "OON does not speculate on government knowledge or response. This prototype contains no source-backed government claims.",
       },
       {
         question: "What does Oyagaa–Oomo mean?",

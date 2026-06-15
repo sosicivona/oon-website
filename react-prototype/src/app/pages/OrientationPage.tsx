@@ -66,49 +66,45 @@ interface OrientationPageProps {
   activeTheme: string;
 }
 
-// ── A. Compact overview panels ─────────────────────────────────────────────────
 const OVERVIEW = [
   {
-    q: "What is the UMMO dossier?",
-    a: "A large corpus of correspondence attributed to an extraterrestrial civilization, received mainly in Spain from the mid-1960s through the 1990s. The letters address scientific, philosophical, and social topics at length. The corpus is unusually consistent in terminology and structure. Its origin is disputed.",
+    q: "What is this interface?",
+    a: "A structured reading layer for the UMMO dossier. Final orientation copy is pending approval.",
   },
   {
-    q: "What is OON?",
-    a: "Oyagaa–Oomo Network is a structured reading layer over the corpus. OON does not host original documents, does not argue for any verdict on the material's origin, and does not represent any institutional position. It is a navigation and provenance interface.",
+    q: "What is pending?",
+    a: "Source paths, dates, archive labels, summaries, and interpretation are pending source review and copy approval.",
   },
   {
-    q: "How should I read this material?",
-    a: "Start with one thread, not the whole corpus. OON separates source text, translation, summary, analysis, and interpretation so you can follow the layers yourself. You do not need to resolve the case before you begin reading.",
+    q: "How should I read this prototype?",
+    a: "Treat it as a visual and interaction shell. It does not yet contain approved corpus records.",
   },
   {
     q: "Where do the sources live?",
-    a: "Original documents are held in external archives and institutions, not on this site. OON links to holding institutions where access is available. Access varies — some collections are publicly accessible; others require a formal request. The Sources section lists all cited archives.",
+    a: "The true archives remain external. OON source paths will be added only after verification.",
   },
 ];
 
-// ── C. First Questions ─────────────────────────────────────────────────────────
-// These are the highest-friction questions readers arrive with immediately.
-// Peña question (#3) must remain visible; tone is sober and non-defensive throughout.
 const FIRST_QUESTIONS = [
   {
     q: "What is the UMMO dossier?",
-    a: "A large corpus of letters, transcripts, and related documents attributed to an extraterrestrial source. The material spans several decades, multiple languages, and a wide range of topics. Scale, internal consistency, and disputed origin are the defining features.",
+    a: "Approved orientation copy is pending. Use the homepage statement as the current locked public framing.",
   },
   {
-    q: "Why is it still studied?",
-    a: "The correspondence is unusual in scale, consistency, and cross-linguistic spread. Researchers in linguistics, history of ideas, science studies, and documentary investigation continue to engage with it for different reasons. The question of origin has not been settled to the satisfaction of all parties.",
+    q: "Why does source review matter?",
+    a: "This project depends on keeping source material, summaries, and OON interpretation visually distinct.",
   },
   {
-    q: "Wasn't this resolved by José Luis Jordán Peña?",
-    a: "The Peña authorship claim is central to the history of the case and deserves careful source review. OON treats it as a major counterpoint to study, not something to hide or dismiss. The site separates source material, authorship questions, later commentary, and OON interpretation so readers can follow the layers and evaluate the claim directly.",
+    q: "How will authorship questions be handled?",
+    a: "Authorship questions will be handled as sourced material after approved copy and source paths are available.",
   },
   {
     q: "Is OON asking me to believe this?",
-    a: "No. OON presents material and provenance. It does not argue a verdict on origin. The status labels — Verified, Under Review, Unverified — describe provenance confirmation, not authenticity claims. You read; you evaluate.",
+    a: "No. OON is intended as a navigation and provenance layer, not a demand for belief.",
   },
   {
     q: "Where do the sources live?",
-    a: "Original documents are held in external archives. OON links to holding institutions. The Sources section lists all cited archives and their access status.",
+    a: "The true archives remain external. Source rows are placeholders until reviewed.",
   },
 ];
 
@@ -247,7 +243,7 @@ export function OrientationPage({ onNavigate, activeTheme }: OrientationPageProp
             fontSize: "1rem", color: "var(--ink-muted, var(--muted-foreground))",
             lineHeight: 1.75, maxWidth: "54ch",
           }}>
-            The UMMO dossier is large, multilingual, and disputed. OON helps you navigate the layers — source, translation, analysis, interpretation — without requiring you to resolve anything before you begin.
+            This page will orient readers once approved Start copy and verified source paths are available. For now, it demonstrates the V3 structure without source claims.
           </p>
         </div>
 
@@ -292,9 +288,9 @@ export function OrientationPage({ onNavigate, activeTheme }: OrientationPageProp
             <SectionLabel>Choose a path</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {([
-                { page: "read" as Page,     nav: "Read",     body: "Browse source records by type, period, or topic. Expand any row to read an excerpt." },
-                { page: "timeline" as Page, nav: "Timeline", body: "Follow the key events in sequence. Click any node to expand context and source links." },
-                { page: "sources" as Page,  nav: "Sources",  body: "Index of holding institutions and reference collections cited in the corpus." },
+                { page: "read" as Page,     nav: "Read",     body: "Preview the browse and item-row interaction using pending review records." },
+                { page: "timeline" as Page, nav: "Timeline", body: "Preview the timeline spine using source-review placeholders." },
+                { page: "sources" as Page,  nav: "Sources",  body: "Preview source-path rows before verified archive details are added." },
               ]).map(path => (
                 <PathTile key={path.page} page={path.page} nav={path.nav} body={path.body} onNavigate={onNavigate} activeTheme={activeTheme} />
               ))}
@@ -304,7 +300,6 @@ export function OrientationPage({ onNavigate, activeTheme }: OrientationPageProp
 
         {/* ── D. First Questions ────────────────────────────────────────────── */}
         {/* Compact — not a full FAQ. Highest-friction questions only. */}
-        {/* Peña question (#3) is present and not buried. */}
         <div style={{ marginBottom: "3.5rem" }}>
           <SectionLabel>First questions</SectionLabel>
           <div style={{ borderTop: "1px solid var(--hairline, var(--border))" }}>
@@ -360,7 +355,7 @@ export function OrientationPage({ onNavigate, activeTheme }: OrientationPageProp
           }}
         >
           <p style={{ fontSize: "0.875rem", color: "var(--ink-muted, var(--muted-foreground))", lineHeight: 1.65, maxWidth: "52ch" }}>
-            Have questions about authorship, translations, later communications, or source status?
+            Have questions about authorship, translations, or source status?
           </p>
           <button
             onClick={() => onNavigate("faq")}

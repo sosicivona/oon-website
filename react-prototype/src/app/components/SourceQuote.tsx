@@ -3,15 +3,15 @@ import { ExternalLink } from "lucide-react";
 interface SourceQuoteProps {
   /** Actual passage text in serif. MUST be bracketed placeholder until verified corpus passage supplied. */
   passage: string;
-  /** Document/letter ID (e.g. "D41-1", "Letter 1966-03-14") */
+  /** Document or item reference from approved inventory */
   documentId?: string;
-  /** Date or period (e.g. "March 14, 1966", "1966") */
+  /** Date or period from approved inventory */
   date?: string;
-  /** Source status badge (e.g. "Original Spanish", "English translation", "Verified") */
+  /** Source status badge from approved inventory */
   sourceStatus?: string;
   /** Link to full item detail or archive */
   linkTo?: () => void;
-  /** Translation attribution (e.g. "Translated by [name], 2022") */
+  /** Translation attribution from approved inventory */
   translationNote?: string;
   /** Visual variant — standard block or epigraph (centered, larger) */
   variant?: "block" | "epigraph";

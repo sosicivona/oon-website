@@ -11,9 +11,9 @@ interface AboutPageProps {
 }
 
 const WHAT_OON_IS = [
-  { term: "A reading interface",     body: "OON is a structured navigation layer over a large body of primary-source material. It provides browsing, provenance tracking, and reading paths." },
-  { term: "Source-visible",          body: "Every item in OON links back to its holding institution. OON does not host original documents. Provenance is always cited." },
-  { term: "Layer-aware",             body: "OON separates source text, translation, summary, analysis, hypothesis, and OON interpretation. These layers are visually distinct throughout the site." },
+  { term: "A reading interface",     body: "OON is intended as a structured navigation layer over the UMMO dossier." },
+  { term: "Source-visible",          body: "OON should point readers back to external source paths once those paths are verified." },
+  { term: "Layer-aware",             body: "OON should separate source text, translation, summary, analysis, hypothesis, and OON interpretation." },
   { term: "Non-positional",          body: "OON does not argue a verdict on the origin of the UMMO correspondence. It presents material, documents provenance, and leaves evaluation to the reader." },
 ];
 
@@ -21,7 +21,7 @@ const WHAT_OON_IS_NOT = [
   { term: "An archive",              body: "OON does not hold original documents. Original material is held in external institutions." },
   { term: "An advocacy site",        body: "OON is not promoting any hypothesis about the origin, nature, or meaning of the UMMO correspondence." },
   { term: "A debunking site",        body: "OON is not trying to disprove any claim. Counterpoints are documented as source material, not arguments." },
-  { term: "A research body",         body: "OON does not conduct independent research. It indexes and structures existing documented material." },
+  { term: "A research body",         body: "OON should not invent or independently assert source material. It indexes and structures reviewed material." },
 ];
 
 const LAYERS = [
@@ -46,7 +46,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           About Oyagaa–Oomo Network
         </h1>
         <p style={{ fontSize: "1rem", color: "var(--ink-muted, var(--muted-foreground))", lineHeight: 1.75, maxWidth: "54ch" }}>
-          OON is a structured reading interface over the UMMO dossier. It is not an archive, not an advocacy project, and not a research body. It is a navigation layer — source-visible, layer-aware, and non-positional.
+          OON is a structured reading interface over the UMMO dossier. It is not an archive, not an advocacy project, and not a research body. This prototype demonstrates the intended navigation layer while source records remain pending.
         </p>
       </div>
 
@@ -86,7 +86,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           How OON separates the layers
         </p>
         <p style={{ fontSize: "0.875rem", color: "var(--ink-muted, var(--muted-foreground))", lineHeight: 1.7, maxWidth: "52ch", marginBottom: "1.25rem" }}>
-          Every item in OON is placed in one of six layers. The layer is always visible in the item's header, sidebar, and document view. You always know what you are reading.
+          Future reviewed items should make their layer visible in the item header, sidebar, and document view.
         </p>
         <div style={{ borderTop: "1px solid var(--hairline, var(--border))" }}>
           {LAYERS.map(({ n, label, note }) => (

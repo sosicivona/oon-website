@@ -151,7 +151,7 @@ function ThemeColumn({ isDark }: { isDark: boolean }) {
       {/* Audio player */}
       <SectionLabel>G. Audio player (always aurora-amber, human-communication group)</SectionLabel>
       <div style={{ maxWidth: "20rem" }}>
-        <AudioPlayer title="Sample — recorded interview, 1981" duration="4:22" type="interview" />
+        <AudioPlayer title="Sample audio shell" duration="0:00" type="recording" />
       </div>
     </div>
   );

@@ -137,7 +137,7 @@ export function LandingPage({ onNavigate, activeTheme = "solstice" }: LandingPag
               textTransform: "uppercase", color: "var(--accent)",
               marginBottom: "1rem",
             }}>
-              Oyagaa–Oomo Network
+              The UMMO dossier
             </p>
 
             {/* Headline */}
@@ -148,15 +148,14 @@ export function LandingPage({ onNavigate, activeTheme = "solstice" }: LandingPag
               color: "var(--ink, var(--foreground))",
               marginBottom: "1rem",
             }}>
-              Begin with the shape of the dossier.
+              For sixty years, a body of communications has circulated from a source claiming to come from a planet called UMMO.
             </h1>
 
-            {/* One placeholder line */}
             <p style={{
               fontSize: "0.9375rem", color: "var(--ink-muted, var(--muted-foreground))",
               lineHeight: 1.65, marginBottom: "2rem",
             }}>
-              A structured reading layer over a large collection of primary-source material.
+              Letters, reports, archives, contradictions, and unanswered questions remain. Our network helps readers enter the material, follow the threads, and trace each path back to its sources.
             </p>
 
             {/* ONE primary CTA */}
@@ -222,7 +221,7 @@ export function LandingPage({ onNavigate, activeTheme = "solstice" }: LandingPag
           <ChevronDown size={18} style={{ animation: "bounce-down 1.8s ease-in-out infinite", strokeWidth: 1.5 }} />
         </div>
 
-        {/* Stats bar — corpus quick facts */}
+        {/* Status bar — shell labels only until corpus inventory is approved for display */}
         <div style={{
           position: "absolute", bottom: 0, left: 0, right: 0,
           background: "var(--glass-bg, rgba(0,0,0,0.30))",
@@ -231,12 +230,12 @@ export function LandingPage({ onNavigate, activeTheme = "solstice" }: LandingPag
         }}>
           <div className="max-w-5xl mx-auto px-6 py-3 flex items-center flex-wrap gap-x-8 gap-y-1">
             {[
-              { n: "380+", label: "source records" },
-              { n: "1950–1993", label: "primary period" },
-              { n: "14", label: "institutions" },
+              { n: "Pending", label: "record inventory" },
+              { n: "Pending", label: "source paths" },
+              { n: "Pending", label: "copy approval" },
             ].map(({ n, label }) => (
               <div key={label} className="flex items-baseline gap-2">
-                <span style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, color: "var(--ink, var(--foreground))" }}>{n}</span>
+                <span style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 400, color: "var(--ink, var(--foreground))" }}>{n}</span>
                 <span style={{ fontSize: "0.75rem", color: "var(--ink-muted, var(--muted-foreground))" }}>{label}</span>
               </div>
             ))}
@@ -251,17 +250,16 @@ export function LandingPage({ onNavigate, activeTheme = "solstice" }: LandingPag
         style={{ borderTop: "1px solid var(--hairline, var(--border))" }}
       >
         <div className="border-l-2 pl-6" style={{ borderColor: "var(--accent)", maxWidth: "52ch" }}>
-          {/* ⚠ PLACEHOLDER — replace with a real representative source excerpt */}
           <p style={{
             fontFamily: "var(--font-display)", fontStyle: "italic",
             fontSize: "1.0625rem", lineHeight: 1.7,
             color: "var(--ink-muted, var(--muted-foreground))",
             marginBottom: "0.625rem",
           }}>
-            "[Placeholder excerpt from a source document — short, representative.]"
+            Excerpt pending source approval.
           </p>
           <p style={{ fontSize: "0.6875rem", color: "var(--ink-muted, var(--muted-foreground))", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-            Communication item · Source record · Verified
+            Communication item · Source path pending review
           </p>
         </div>
       </div>
