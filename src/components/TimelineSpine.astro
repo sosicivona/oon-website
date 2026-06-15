@@ -1,0 +1,20 @@
+---
+const {
+  items = [],
+} = Astro.props;
+---
+
+<ol class="timeline-spine">
+  {items.map((item) => (
+    <li class="timeline-node">
+      <div class="timeline-marker" aria-hidden="true">
+        <span class="timeline-dot"></span>
+      </div>
+      <div class="timeline-content">
+        {item.label && <span class="type-chip">{item.label}</span>}
+        <h3 class="timeline-title">{item.title}</h3>
+        {item.description && <p class="timeline-description">{item.description}</p>}
+      </div>
+    </li>
+  ))}
+</ol>

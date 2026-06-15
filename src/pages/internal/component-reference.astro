@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DefinitionList from "../../components/DefinitionList.astro";
+import FAQAccordion from "../../components/FAQAccordion.astro";
+import FilterPill from "../../components/FilterPill.astro";
+import ItemRow from "../../components/ItemRow.astro";
+import LinkRow from "../../components/LinkRow.astro";
+import NavTile from "../../components/NavTile.astro";
+import SourceTrail from "../../components/SourceTrail.astro";
+import StatusPill from "../../components/StatusPill.astro";
+import TimelineSpine from "../../components/TimelineSpine.astro";
+import TypeChip from "../../components/TypeChip.astro";
+
+const basePath = import.meta.env.BASE_URL;
+const link = (path) => `${basePath}${path}`;
+
+const definitionItems = [
+  {
+    term: "Source text",
+    description: "The original layer. TODO: Add only after source verification.",
+  },
+  {
+    term: "Summary",
+    description: "A condensed description. Not a quotation.",
+  },
+  {
+    term: "OON interpretation",
+    description: "Editorial framing by OON, visually separated from source material.",
+  },
+];
+
+const timelineItems = [
+  {
+    label: "Pending source",
+    title: "Timeline node shell",
+    description: "TODO: Add verified chronology and source reference.",
+  },
+  {
+    label: "Review step",
+    title: "Second node shell",
+    description: "Used for future source-reviewed chronology only.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "How should this component be used?",
+    answer: "Use this row for orientation or methodology answers. Do not place unverified source claims here.",
+  },
+  {
+    question: "Can this hold corpus content?",
+    answer: "Only after the content has source, translation, and interpretation boundaries.",
+  },
+];
+---
+
+<BaseLayout
+  title="Component Reference | Oyagaa-Oomo Network"
+  description="Internal component reference for the OON Astro design-system port."
+>
+  <section class="section page-hero">
+    <div class="section-inner component-reference">
+      <div class="section-heading">
+        <p class="eyebrow">Internal reference</p>
+        <h2>Astro component shells</h2>
+        <p class="section-lede">
+          Visual-only reference for the first Astro design-system pass. This page is not linked
+          in public navigation.
+        </p>
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Navigation tiles</h3>
+        <div class="card-grid compact">
+          <NavTile title="Start" text="Route tile shell for orientation pages." href={link("start-here/")} />
+          <NavTile title="Read" text="Route tile shell for future reading paths." href={link("read/")} />
+          <NavTile title="Sources" text="Route tile shell for source ecosystem pages." href={link("#sources")} />
+        </div>
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Pill taxonomy</h3>
+        <div class="pill-row">
+          <StatusPill label="Source verified" tone="verified" />
+          <StatusPill label="Under review" tone="review" />
+          <StatusPill label="Status pending" />
+          <TypeChip label="Communication" />
+          <FilterPill label="Filter option" />
+          <FilterPill label="Selected filter" pressed />
+        </div>
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Definition list</h3>
+        <DefinitionList items={definitionItems} />
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Rows</h3>
+        <ItemRow />
+        <LinkRow
+          title="External source row shell"
+          label="Source"
+          description="TODO: Verify archive URL before adding a link."
+        />
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Timeline spine</h3>
+        <TimelineSpine items={timelineItems} />
+      </div>
+
+      <div class="component-reference-row">
+        <h3>FAQ accordion</h3>
+        <FAQAccordion items={faqItems} />
+      </div>
+
+      <div class="component-reference-row">
+        <h3>Source trail</h3>
+        <SourceTrail items={["Source location TODO", "Translation status TODO", "Analysis boundary"]} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

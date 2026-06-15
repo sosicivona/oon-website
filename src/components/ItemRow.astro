@@ -1,0 +1,24 @@
+---
+import StatusPill from "./StatusPill.astro";
+import TypeChip from "./TypeChip.astro";
+
+const {
+  title = "Communication item",
+  description = "TODO: Add source summary only after verification.",
+  href,
+  type = "Material type",
+  status = "Status pending",
+  statusTone = "neutral",
+} = Astro.props;
+
+const Element = href ? "a" : "article";
+---
+
+<Element class="item-row" data-clickable={href ? "true" : "false"} href={href}>
+  <div class="item-row-pills">
+    <TypeChip label={type} />
+    <StatusPill label={status} tone={statusTone} />
+  </div>
+  <strong class="item-row-title">{title}</strong>
+  <span class="item-row-meta">{description}</span>
+</Element>

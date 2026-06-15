@@ -1,0 +1,11 @@
+---
+const {
+  label,
+  pressed = false,
+} = Astro.props;
+---
+
+<button class="filter-pill" type="button" aria-pressed={pressed ? "true" : "false"}>
+  {pressed && <span aria-hidden="true">✓</span>}
+  <span>{label}</span>
+</button>

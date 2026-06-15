@@ -1,0 +1,8 @@
+---
+const {
+  label = "Status pending",
+  tone = "neutral",
+} = Astro.props;
+---
+
+<span class="status-pill" data-tone={tone}>{label}</span>

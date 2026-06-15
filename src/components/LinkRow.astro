@@ -1,0 +1,17 @@
+---
+const {
+  title,
+  description,
+  label,
+  href,
+} = Astro.props;
+
+const Element = href ? "a" : "article";
+---
+
+<Element class="link-row" href={href}>
+  {label && <span class="type-chip">{label}</span>}
+  <strong class="link-row-title">{title}</strong>
+  {description && <span class="link-row-description">{description}</span>}
+  {href && <span class="link-row-affordance">External link</span>}
+</Element>

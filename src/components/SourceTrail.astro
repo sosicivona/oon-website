@@ -1,0 +1,17 @@
+---
+const {
+  title = "Source trail",
+  note = "TODO: Verify source location, translation status, and analysis boundary.",
+  items = [],
+} = Astro.props;
+---
+
+<aside class="source-trail" aria-label={title}>
+  <p class="source-trail-label">{title}</p>
+  <p class="source-trail-note">{note}</p>
+  {items.length > 0 && (
+    <div class="source-trail-list">
+      {items.map((item) => <span class="type-chip">{item}</span>)}
+    </div>
+  )}
+</aside>
