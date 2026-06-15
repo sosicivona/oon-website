@@ -1,0 +1,359 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-display: 'Spectral', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* ── Meridian (light) defaults — overridden at runtime by ThemeSwitcher ── */
+  /* Named design tokens (§2 of handoff) */
+  --bg-base:     #F3F0E9;
+  --bg-surface:  #FBFAF6;
+  --bg-elevated: #FBFAF6;  /* warm off-white, not pure white — prevents cold slab on warm paper */
+  --ink:         #1E1B16;
+  --ink-muted:   #6B6760;
+  --hairline:    #E2DDD2;
+  --accent:      #3344A8;    /* cool slate-blue — interactive only */
+  --accent-fill: #3344A8;
+  --accent-on-fill: #FBFAF6;
+  --accent-tint: rgba(51,68,168,0.07);
+  --accent-ring: rgba(51,68,168,0.40);
+  --glow-warm:   #C77A2E;    /* atmosphere only */
+  --glow-violet: #B9AEDC;    /* atmosphere only */
+
+  /* Aliases for Tailwind bg-background / text-foreground etc. */
+  --background:        #F3F0E9;
+  --foreground:        #1E1B16;
+  --card:              #FBFAF6;
+  --card-foreground:   #1E1B16;
+  --popover:           #FBFAF6;
+  --popover-foreground:#1E1B16;
+  --primary:           #3344A8;
+  --primary-foreground:#FBFAF6;
+  --secondary:         #F8F5EF;  /* warm off-white, not pure white — prevents cold slab on warm paper */
+  --secondary-foreground:#1E1B16;
+  --muted:             #F8F5EF;  /* warm off-white, not pure white */
+  --muted-foreground:  #6B6760;
+  --border:            #E2DDD2;
+  --input:             transparent;
+  --input-background:  #F3F0E9;
+  --switch-background: #B8B0A0;
+  --destructive:       #B83030;
+  --destructive-foreground: #FBFAF6;
+  --ring:              rgba(51,68,168,0.40);
+  --accent-foreground: #FBFAF6;
+  --glass-bg:          rgba(255,255,255,0.28);
+  --glass-border:      rgba(51,68,168,0.14);
+  --glow1:             #C77A2E;
+  --glow2:             #B9AEDC;
+
+  /* Status pill vars */
+  --s-green-text:   #2E7D52;
+  --s-green-bg:     rgba(46,125,82,0.10);
+  --s-green-border: rgba(46,125,82,0.35);
+  --s-amber-text:   #92611A;
+  --s-amber-bg:     rgba(146,97,26,0.10);
+  --s-amber-border: rgba(146,97,26,0.35);
+  --s-neutral-text: #6B6760;
+  --s-neutral-bg:   rgba(0,0,0,0.04);
+  --s-neutral-border:#E2DDD2;
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  /* ══════════════════════════════════════════════════════════════════════════
+     AURORA PALETTE — extracted from OON_banner_V3.jpg
+  /* §3 atmosphere: two faint corner glows (applied by App.tsx fixed div) */
+  --aurora-wash:
+    radial-gradient(ellipse at 92% 4%, rgba(199,122,46,0.09) 0%, transparent 42%),
+    radial-gradient(ellipse at 8% 96%, rgba(68,40,168,0.06) 0%, transparent 42%);
+  --aurora-glow: 0 0 24px -8px rgba(51,68,168,0.40);
+  --neon-amber: #92611A;
+  --neon-green: #2E7D52;
+  --neon-red:   #8A2828;
+  --neon-cyan:  #3344A8;
+  --aurora-orange: #C77A2E;
+  --aurora-pink:   #902858;
+  --aurora-violet: #3820A0;
+  --aurora-green:  #1E6A40;
+  --aurora-red:    #8A2828;
+
+  --chart-1: #3344A8;
+  --chart-2: #2E7D52;
+  --chart-3: #92611A;
+  --chart-4: #6B6760;
+  --chart-5: #B9AEDC;
+  --radius: 0.125rem;
+  --sidebar: #F3F0E9;
+  --sidebar-foreground: #1E1B16;
+  --sidebar-primary: #3344A8;
+  --sidebar-primary-foreground: #FBFAF6;
+  --sidebar-accent: #FFFFFF;
+  --sidebar-accent-foreground: #1E1B16;
+  --sidebar-border: #E2DDD2;
+  --sidebar-ring: rgba(51,68,168,0.40);
+}
+
+.dark {
+  /* Solstice dark defaults (overridden by ThemeSwitcher at runtime) */
+  --bg-base:     #0C0E15;
+  --bg-surface:  #15171F;
+  --bg-elevated: #1C1E27;
+  --ink:         #ECEAE3;
+  --ink-muted:   #9A9AA3;
+  --hairline:    rgba(255,255,255,0.10);
+  --accent:      #9AA6DC;
+  --accent-fill: #5566A8;
+  --accent-on-fill: #ECEAE3;
+  --accent-tint: rgba(122,140,201,0.08);
+  --accent-ring: rgba(122,140,201,0.50);
+  --glow-warm:   #E87020;
+  --glow-violet: #4428A8;
+  --s-green-text:   #6FD3A0;
+  --s-green-bg:     rgba(63,166,110,0.14);
+  --s-green-border: rgba(63,166,110,0.40);
+  --s-amber-text:   #E0A45E;
+  --s-amber-bg:     rgba(200,123,42,0.12);
+  --s-amber-border: rgba(200,123,42,0.40);
+  --s-neutral-text: #9A9AA3;
+  --s-neutral-bg:   rgba(255,255,255,0.05);
+  --s-neutral-border:rgba(255,255,255,0.18);
+
+  --aurora-wash:
+    radial-gradient(ellipse at 92% 4%, rgba(232,112,32,0.09) 0%, transparent 42%),
+    radial-gradient(ellipse at 8% 96%, rgba(68,40,168,0.07) 0%, transparent 42%);
+  --aurora-glow: 0 0 24px -8px rgba(85,102,168,0.50);
+  --neon-amber: #E0A45E;
+  --neon-green: #6FD3A0;
+  --neon-red:   #D04040;
+  --neon-cyan:  #9AA6DC;
+  --aurora-orange: #E87020;
+  --aurora-pink:   #C03878;
+  --aurora-violet: #4428A8;
+  --aurora-green:  #28A870;
+  --aurora-red:    #D04040;
+
+  /* Solstice surface & text aliases */
+  --background:        #0C0E15;
+  --foreground:        #ECEAE3;
+  --card:              #15171F;
+  --card-foreground:   #ECEAE3;
+  --popover:           #15171F;
+  --popover-foreground:#ECEAE3;
+  --primary:           #5566A8;
+  --primary-foreground:#ECEAE3;
+  --secondary:         #1C1E27;
+  --secondary-foreground:#ECEAE3;
+  --muted:             #1C1E27;
+  --muted-foreground:  #9A9AA3;
+  --accent:            #9AA6DC;
+  --accent-foreground: #ECEAE3;
+  --accent-fill:       #5566A8;
+  --accent-on-fill:    #ECEAE3;
+  --accent-tint:       rgba(122,140,201,0.08);
+  --accent-ring:       rgba(122,140,201,0.50);
+  --destructive:       #CC3030;
+  --destructive-foreground:#ECEAE3;
+  --border:            rgba(255,255,255,0.10);
+  --hairline:          rgba(255,255,255,0.10);
+  --input:             rgba(255,255,255,0.06);
+  --input-background:  #1C1E27;
+  --switch-background: #3A3C48;
+  --ring:              rgba(122,140,201,0.50);
+  --glass-bg:          rgba(12,14,21,0.72);
+  --glass-border:      rgba(255,255,255,0.10);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #5566A8;
+  --chart-2: #28A870;
+  --chart-3: #E0A45E;
+  --chart-4: #9A9AA3;
+  --chart-5: #4428A8;
+  --sidebar: #15171F;
+  --sidebar-foreground: #ECEAE3;
+  --sidebar-primary: #5566A8;
+  --sidebar-primary-foreground: #ECEAE3;
+  --sidebar-accent: #1C1E27;
+  --sidebar-accent-foreground: #ECEAE3;
+  --sidebar-border: rgba(255,255,255,0.10);
+  --sidebar-ring: rgba(122,140,201,0.50);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+}
+
+/* Used when the parent already centers; avoids the translateX conflict */
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); opacity: 0.65; }
+  50%       { transform: translateY(7px); opacity: 1; }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+
+@keyframes hero-drift {
+  0% { transform: translateY(0) scale(1.02); }
+  100% { transform: translateY(-20px) scale(1.06); }
+}
+
+@keyframes waveform-0 { from { transform: scaleY(0.4); } to { transform: scaleY(1); } }
+@keyframes waveform-1 { from { transform: scaleY(0.6); } to { transform: scaleY(0.9); } }
+@keyframes waveform-2 { from { transform: scaleY(0.3); } to { transform: scaleY(1.1); } }
+
+/* ── Interactive element cursor ──────────────────────────────────────────────
+   All non-disabled buttons get a pointer cursor.
+   Hover states are managed per-component via Tailwind hover: classes or
+   explicit onMouseEnter/Leave handlers — NOT a global CSS rule (which
+   fights with Tailwind and causes double-opacity issues).
+*/
+button:not([disabled]) {
+  cursor: pointer;
+}
+
+/* ── Responsive base rules ──────────────────────────────────────────────────
+   These ensure nothing clips on narrow viewports.
+   Component-level responsive is handled via Tailwind breakpoints (sm: md: lg:).
+*/
+@media (max-width: 640px) {
+  /* Hero glass card: full-width, less padding */
+  .hero-glass {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    padding: 1.5rem !important;
+  }
+  /* Stats bar: wrap and center */
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+}
+
+/* Hide scrollbars globally, show on hover */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+@layer base {
+  /* §9: visible focus rings on every interactive element */
+  *:focus-visible {
+    outline: 2px solid var(--accent-ring, var(--ring));
+    outline-offset: 2px;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    /* Aurora wash is applied via position:fixed div in App.tsx — NOT here.
+       body only provides the base background-color. */
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
