@@ -2,6 +2,8 @@
 import Section from "../components/Section.astro";
 import ThemeCard from "../components/ThemeCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const youtubeChannelUrl = "https://www.youtube.com/@OYAGAA-OOMO-NETWORK";
 ---
 
 <BaseLayout
@@ -15,7 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     variant="page-hero"
   >
     <div class="two-column">
-      <ThemeCard title="OON YouTube" text="Curated channel link pending." />
+      <ThemeCard title="OON YouTube" text="Oyagaa-Oomo Network channel." href={youtubeChannelUrl} />
       <ThemeCard title="Podcast / visual explainers" text="Selected media pathway pending." />
     </div>
   </Section>

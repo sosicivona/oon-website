@@ -7,6 +7,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const basePath = import.meta.env.BASE_URL;
 const link = (path) => `${basePath}${path}`;
 const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
+const youtubeChannelUrl = "https://www.youtube.com/@OYAGAA-OOMO-NETWORK";
 ---
 
 <BaseLayout
@@ -112,7 +113,7 @@ const bannerImage = `${basePath}images/oon-banner-v3.jpg`;
     lede="OON videos and visual explainers can introduce the case while the website keeps source review and reading paths visible."
   >
     <div class="two-column">
-      <ThemeCard title="OON YouTube" text="Curated channel link pending." href={link("watch/")} />
+      <ThemeCard title="OON YouTube" text="Oyagaa-Oomo Network channel." href={youtubeChannelUrl} />
       <ThemeCard title="Visual explainers" text="Selected media pathway pending." href={link("watch/")} />
     </div>
   </Section>
